@@ -1,18 +1,32 @@
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
+import Home from "../pages/Home";
+import Offers from "../pages/Offers";
+import Egg_Club from "../pages/Egg_Club";
+import Deal_of_the_DAy from "../pages/Deal_of_the_DAy";
+import Summer from "../pages/Summer";
+import Flash from "../pages/Flash";
+import Popular from "../pages/Popular";
+import Food from "../pages/Food";
+import Cleaning from "../pages/Cleaning";
+import Personal from "../pages/Personal";
+import Health from "../pages/Health";
+import Baby from "../pages/Baby";
+import Kitchen from "../pages/Kitchen";
+import Stationery from "../pages/Stationery";
+import Pet from "../pages/Pet";
+import Toyes from "../pages/Toyes";
+import Beauty from "../pages/Beauty";
+import Fashion from "../pages/Fashion";
+import Vehicle from "../pages/Vehicle";
 
 const App = () => {
-  useEffect(() => {
-    let x = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    console.log(x);
-  }, []);
-  const { them } = useSelector((state) => state.Thims);
+  
 
   return (
-    <div className={them ? "Light" : "Drack"}>
+    <div >
       <div className="body">
         <Header />
         <div className="countentSection">
@@ -20,7 +34,25 @@ const App = () => {
           <div className="MainContent">
             <BrowserRouter>
               <Routes>
-                <Route path="/" element={""} />
+                <Route path="/" element={<Home />} />
+                <Route path="/offers" element={<Offers />} />
+                <Route path="/egg-club" element={<Egg_Club/> } />
+                <Route path="/deal-of-the-day" element={ <Deal_of_the_DAy/>} />
+                <Route path="/summer-collection" element={ <Summer/>} />
+                <Route path="/flash-sales" element={<Flash/> } />
+                <Route path="/popular" element={<Popular/> } />
+                <Route path="/food" element={<Food/> } />
+                <Route path="/cleaning" element={ <Cleaning/>} />
+                <Route path="/personal-care" element={<Personal/> } />
+                <Route path="/hygiene" element={<Health/> } />
+                <Route path="/babycare" element={ <Baby/>} />
+                <Route path="/home-kitchen" element={ <Kitchen/>} />
+                <Route path="/stationery-office" element={<Stationery/> } />
+                <Route path="/pet-care" element={ <Pet/>} />
+                <Route path="/toys-sports" element={ <Toyes/>} />
+                <Route path="/beauty" element={ <Beauty/>} />
+                <Route path="/fashion-lifestyle" element={ <Fashion/>} />
+                <Route path="/vehicle-essentials" element={ <Vehicle/>} />
               </Routes>
             </BrowserRouter>
           </div>

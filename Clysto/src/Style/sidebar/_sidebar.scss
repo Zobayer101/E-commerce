@@ -3,9 +3,10 @@
   height: 90%;
   width: 260px;
   z-index: 1;
-  // transform: translateX(-200px);
-  // position: absolute;
+  transform: translateX(00px);
+  position: absolute;
   // display: none ;
+  transition: .2s;
   overflow: auto;
   background: #f3f3f3;
   flex-shrink: 0;
@@ -91,8 +92,19 @@
       }
     }
 }
+
 @media screen and (max-width:900px) {
-  .MainSide{
+  .MainSide.MSow{
+    position: absolute;
+    transform: translateX(-300px);
+  }
+}
+@media screen and (min-width:900px) {
+  .MainSide.MSow{
+     position: relative;
+    transform: translateX(00px);
+  }
+  .MainSide.Show{
     position: absolute;
     transform: translateX(-300px);
   }

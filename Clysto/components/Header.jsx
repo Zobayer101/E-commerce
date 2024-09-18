@@ -1,13 +1,18 @@
 import { FaBarsStaggered } from "react-icons/fa6";
 import { CiLocationOn } from "react-icons/ci";
 import { IoIosSearch } from "react-icons/io";
+import { useDispatch} from "react-redux";
+import { barMode } from "../Fetuare/Them";
 
 const Header = () => {
+  
+  const dispach = useDispatch();
+  
   return (
     <div >
       <div className="barCountuner">
         <div className="section1">
-          <div className="bar">
+          <div className="bar" onClick={()=>dispach(barMode())}>
             <FaBarsStaggered />
           </div>
           <div className="logo">

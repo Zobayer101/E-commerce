@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import LayoutThem from './../Fetuare/Them';
+import Layoutbar from './../Fetuare/Them';
 
 
 const stor = configureStore({
     reducer: {
-      Thims:LayoutThem,
+      Bar:Layoutbar,
   }
 });
 

@@ -1,8 +1,12 @@
+import { useSelector } from "react-redux";
+import {  NavLink } from "react-router-dom";
 
 
 const Sidebar = () => {
+  const { bar } = useSelector((state) => state.Bar);
+  console.log(bar)
   return (
-    <div className="MainSide">
+    <div className={bar ? "MainSide MSow" : "MainSide Show"}>
       <div className="mainItem">
         <div className="grocery">
           <img src="../src/Icon/sidebar/IconPng/download (3).png" />
@@ -18,9 +22,13 @@ const Sidebar = () => {
         </div>
       </div>
       <hr />
+      <NavLink to={"/offer"}> hello</NavLink>
       <div className="offer">
-        Offer <div className="box">65</div>
+   
+          Offer <div className="box">65</div>
+        
       </div>
+
       <div className="EggClub">Egg Club</div>
       <div className="DealOFThe">
         Deal of the Day <img src="../src/Icon/sidebar/DailyDeal.gif" />

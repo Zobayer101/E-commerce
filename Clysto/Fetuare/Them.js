@@ -2,18 +2,18 @@ import { createSlice } from "@reduxjs/toolkit"
 
 
 const initialState = {
-  them: false,
+  bar: true,
 };
 
-const LayoutThem = createSlice({
-    name: "Them",
+const Layoutbar = createSlice({
+    name: "Bar",
     initialState,
     reducers:{
-        ThemMode: (state) => {
-            state.them = !state.them;
+        barMode: (state) => {
+            state.bar = !state.bar;
        } 
     }
 });
 
-export default LayoutThem.reducer;
-export const {ThemMode } = LayoutThem.actions;
+export default Layoutbar.reducer;
+export const {barMode } = Layoutbar.actions;
