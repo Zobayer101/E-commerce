@@ -3,6 +3,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { IoIosSearch } from "react-icons/io";
 import { useDispatch} from "react-redux";
 import { barMode } from "../Fetuare/Them";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   
@@ -16,7 +17,9 @@ const Header = () => {
             <FaBarsStaggered />
           </div>
           <div className="logo">
+            <Link to={"/"}>
             <img src="../src/Icon/sidebar/Clysto.png" />
+            </Link>
           </div>
         </div>
         <div className="section2">

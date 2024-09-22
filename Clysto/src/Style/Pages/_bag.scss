@@ -1,0 +1,334 @@
+.MainBag {
+  flex-shrink: 0;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  //background: #4bdf1e;
+  width: 320px;
+  height: 90%;
+  .BigBag {
+   
+    margin-top: 55px;
+    height: 100%;
+    width: 100%;
+    // display: none;
+    box-shadow: -5px -4px 20px 0px rgb(56, 52, 52);
+   transform: translateY(-1500px);
+    transition: .4s;
+    .Header {
+      width: 100%;
+      height: 50px;
+      background: #b1b0b0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .sector {
+        display: flex;
+        width: 40%;
+        justify-content: space-around;
+        img {
+          width: 30px;
+        }
+        p {
+          font-weight: 500;
+          color: #3f3f3f;
+          font-size: 18px;
+        }
+      }
+      button {
+        border: 1px solid rgb(122, 122, 122);
+        width: 70px;
+        height: 30px;
+        background: #b1b0b0;
+        color: rgb(143, 0, 0);
+        cursor: pointer;
+        
+      }
+    }
+    .Dcharge {
+      width: 100%;
+      height: 30px;
+      background: #7acc72;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      p{
+        font-size: 12px;
+        color:#fff;
+      }
+      .item{
+        display: flex;
+       p{
+        padding-right: 5px;
+       }
+      }
+    }
+    .Icon {
+      width: 100%;
+      height: 40px;
+      background: #e7e7e7;
+      display: flex;
+      align-items: center;
+      img{
+        width: 24px;
+        margin-left: 6px;
+      }
+      p{
+        padding-left: 20px;
+        font-size: 14px;
+        color: #535353;
+        font-weight: 600;
+      }
+    }
+    .components {
+      width: 100%;
+      max-height: 370px;
+      overflow: auto;
+      background: #e7e6e6;
+      .list{
+        width: 100%;
+        height: 90px;
+        background: #f8f1f1;
+        border-bottom: 1px solid #3a3939;
+        display: flex;
+        align-items: center;
+        .counter{
+          width: 60px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+          p{
+            font-size: 16px;
+            color: #262627;
+            font-weight: 600;
+          }
+          .IcoN{
+            width: 100%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: .2s;
+            &:hover{
+              background: #777777;
+            }
+          }
+        }
+        img{
+          height: 50px;
+          padding: 2px;
+        }
+        .info{
+          padding: 4px;
+          width: 200px;
+          flex-grow: 1;
+          color: #262627;
+          p{
+            font-size: 14px;
+          }
+          h6{
+            font-size: 10px;
+          }
+        }
+        .price{
+          width: 46px;
+          display: flex;
+          justify-content: center;
+        }
+        .cross{
+          width: 30px;
+          justify-content: center;
+          align-items: center;
+          transition: .3s;
+          cursor: pointer;
+          &:hover{
+            color: red;
+          }
+        }
+      }
+    }
+    .spacilCod{
+      height: 40px;
+      width: 100%;
+      background: #c9c9c9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: .2s;
+      &:hover{
+       background: #9b9b9b;
+      }
+      p{font-size: 14px;}
+    }
+    .placeOrder{
+      width: 100%;
+      height: 60px;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .Order,.amount{
+        width: 150px;
+        height: 40px;
+        background: #ca0000;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        cursor: pointer;
+        transition: .2s;
+      }
+      .Order{
+        border-radius: 3px 0 0 3px;
+      background: #ce1b1b;
+      &:hover{
+        background: #ee5252;
+      }
+    }
+      .amount{
+border-radius: 0 3px 3px 0; 
+background: #a80000;
+&:hover{
+        background: #ee5252;
+      }
+      }
+    }
+  }
+  .BigBag.Hide{
+    transform: translateY(0px);
+  }
+  .smallBag{
+    display: block;
+    position: absolute;
+    width: 90px;
+    cursor: pointer;
+    height: 90px;
+    overflow: hidden;
+    &:hover{
+      box-shadow: 0 0px 20px 0px #000;
+    }
+    right: 0;
+    top: 50%;
+    .bagImg{
+      background: #888888;
+      width: 100%;
+      
+      height: 60%;
+     justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img{
+        width: 20px;
+      }
+      p{
+        color: #ffef09;
+        font-weight: 500;
+        padding-top: 4px;
+      }
+    }
+    .PricE{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 40%;
+      background: #c0bfbf;
+      color: rgb(85, 85, 85);
+      font-weight: 600;
+    }
+  }
+  .smallBag.Hide{
+    display: none;
+  }
+  .lowerBag{
+    width: 100%;
+    height: 50px;
+    background: #f00;
+    position: absolute;
+    bottom: 0;
+   
+    display: none;
+    .bagContent{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+     width: 100%;
+     .Icons{
+      height: 100%;
+      background: #fff;
+      width: 100px;
+      font-size: 30px;
+      color: rgb(194, 3, 3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: .3s;
+      &:hover{
+        color:#00a862;
+      }
+    }
+    .pLaceOrder{
+     font-size: 20px;
+     color: #fff;
+     font-weight: 500;
+     cursor: pointer;
+    }
+    .ImG{
+      height: 100%;
+      width: 100px;
+      background: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      img{
+        width: 28px;
+      }
+      span{
+        position: absolute;
+        color: #fff;
+        width: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(10px,-10px);
+        height: 24px;
+        border-radius: 50%;
+        background: rgb(255, 11, 11);
+      }
+    }
+    }
+  }
+}
+@media screen and (max-width:900px) {
+ .MainBag.FullShow{
+z-index: 2;
+ }
+  .MainBag{
+    //color: #00a862;
+    
+    width: 100%;
+    height: 100%;
+    
+    margin-top: 0;
+    .BigBag{
+      margin-top: 0;
+      .components{
+        max-height: 420px;
+      }
+    }
+.lowerBag.Shows{
+  display: block;
+}
+    .smallBag{
+    display: none;
+  }
+  }
+}

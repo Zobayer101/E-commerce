@@ -21,6 +21,7 @@ import Toyes from "../pages/Toyes";
 import Beauty from "../pages/Beauty";
 import Fashion from "../pages/Fashion";
 import Vehicle from "../pages/Vehicle";
+import Favourites from "../pages/Favourites";
 
 const App = () => {
   
@@ -28,16 +29,17 @@ const App = () => {
   return (
     <div >
       <div className="body">
-        <Header />
+        {/* <Header />
         <div className="countentSection">
           <Sidebar />
-          <div className="MainContent">
+          <div className="MainContent"> */}
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/offers" element={<Offers />} />
                 <Route path="/egg-club" element={<Egg_Club/> } />
                 <Route path="/deal-of-the-day" element={ <Deal_of_the_DAy/>} />
+                <Route path="/favourites" element={ <Favourites/>} />
                 <Route path="/summer-collection" element={ <Summer/>} />
                 <Route path="/flash-sales" element={<Flash/> } />
                 <Route path="/popular" element={<Popular/> } />
@@ -45,18 +47,21 @@ const App = () => {
                 <Route path="/cleaning" element={ <Cleaning/>} />
                 <Route path="/personal-care" element={<Personal/> } />
                 <Route path="/hygiene" element={<Health/> } />
-                <Route path="/babycare" element={ <Baby/>} />
+                <Route path="/baby-care" element={ <Baby/>} />
                 <Route path="/home-kitchen" element={ <Kitchen/>} />
                 <Route path="/stationery-office" element={<Stationery/> } />
                 <Route path="/pet-care" element={ <Pet/>} />
                 <Route path="/toys-sports" element={ <Toyes/>} />
                 <Route path="/beauty" element={ <Beauty/>} />
                 <Route path="/fashion-lifestyle" element={ <Fashion/>} />
-                <Route path="/vehicle-essentials" element={ <Vehicle/>} />
+                <Route path="/vehicle-essentials" element={<Vehicle />} />
+                {/* <Route path="/sidebar" element={<Sidebar />} />
+                <Route path="/header" element={<Header />} /> */}
+                
               </Routes>
             </BrowserRouter>
-          </div>
-        </div>
+          {/* </div>
+        </div> */}
       </div>
     </div>
   );

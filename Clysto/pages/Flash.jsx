@@ -1,8 +1,21 @@
-
+import { Link } from "react-router-dom";
+import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
+import Bag from "../components/Bag";
 function Flash() {
   return (
-    <div>Flash</div>
-  )
+    <>
+      <Header />
+      <div className="countentSection">
+        <Sidebar />
+        <Bag/>
+        <div className="MainContent">
+          <h1>Flash....</h1>
+          <Link to={"/offers"}>Goto The offers</Link>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Flash
+export default Flash;

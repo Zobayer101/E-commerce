@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: space-between;
   background: #ebd50b;
+  z-index: 2;
 }
 .barCountuner .section1, .barCountuner .section2, .barCountuner .section3 {
   height: 100%;
@@ -138,6 +139,11 @@
     height: 50%;
   }
 }
+.HomeContent {
+  width: 100%;
+  height: 200vh;
+}
+
 .body {
   height: 100vh;
   width: 100%;
@@ -151,7 +157,7 @@
   margin-top: 55px;
   height: 90%;
   width: 260px;
-  z-index: 1;
+  z-index: 3;
   transform: translateX(0px);
   position: absolute;
   transition: 0.2s;
@@ -189,7 +195,10 @@
   font-size: 11px;
   color: rgb(207, 205, 207);
 }
-.body .countentSection .MainSide .offer, .body .countentSection .MainSide .EggClub, .body .countentSection .MainSide .DealOFThe {
+.body .countentSection .MainSide a {
+  text-decoration: none;
+}
+.body .countentSection .MainSide a .offer, .body .countentSection .MainSide a .EggClub, .body .countentSection .MainSide a .DealOFThe {
   width: 100%;
   height: 40px;
   padding-left: 20px;
@@ -198,8 +207,9 @@
   align-items: center;
   cursor: pointer;
   transition: 0.1s;
+  color: #3d3d3d;
 }
-.body .countentSection .MainSide .offer div, .body .countentSection .MainSide .EggClub div, .body .countentSection .MainSide .DealOFThe div {
+.body .countentSection .MainSide a .offer div, .body .countentSection .MainSide a .EggClub div, .body .countentSection .MainSide a .DealOFThe div {
   height: 26px;
   width: 26px;
   border: 1px solid red;
@@ -210,16 +220,17 @@
   align-items: center;
   justify-content: center;
 }
-.body .countentSection .MainSide .offer img, .body .countentSection .MainSide .EggClub img, .body .countentSection .MainSide .DealOFThe img {
+.body .countentSection .MainSide a .offer img, .body .countentSection .MainSide a .EggClub img, .body .countentSection .MainSide a .DealOFThe img {
   width: 20px;
   margin-left: 10px;
 }
-.body .countentSection .MainSide .offer:hover, .body .countentSection .MainSide .EggClub:hover, .body .countentSection .MainSide .DealOFThe:hover {
+.body .countentSection .MainSide a .offer:hover, .body .countentSection .MainSide a .EggClub:hover, .body .countentSection .MainSide a .DealOFThe:hover {
   background: #e2dfdf;
 }
 .body .countentSection .MainSide .Collection {
   width: 100%;
   height: 35px;
+  color: #3d3d3d;
   margin-top: 1px;
   font-size: 13px;
   padding-left: 10px;
@@ -251,11 +262,343 @@
     transform: translateX(-300px);
   }
 }
+.body .countentSection .MainBag {
+  flex-shrink: 0;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  width: 320px;
+  height: 90%;
+}
+.body .countentSection .MainBag .BigBag {
+  margin-top: 55px;
+  height: 100%;
+  width: 100%;
+  box-shadow: -5px -4px 20px 0px rgb(56, 52, 52);
+  transform: translateY(-1500px);
+  transition: 0.4s;
+}
+.body .countentSection .MainBag .BigBag .Header {
+  width: 100%;
+  height: 50px;
+  background: #b1b0b0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.body .countentSection .MainBag .BigBag .Header .sector {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+}
+.body .countentSection .MainBag .BigBag .Header .sector img {
+  width: 30px;
+}
+.body .countentSection .MainBag .BigBag .Header .sector p {
+  font-weight: 500;
+  color: #3f3f3f;
+  font-size: 18px;
+}
+.body .countentSection .MainBag .BigBag .Header button {
+  border: 1px solid rgb(122, 122, 122);
+  width: 70px;
+  height: 30px;
+  background: #b1b0b0;
+  color: rgb(143, 0, 0);
+  cursor: pointer;
+}
+.body .countentSection .MainBag .BigBag .Dcharge {
+  width: 100%;
+  height: 30px;
+  background: #7acc72;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.body .countentSection .MainBag .BigBag .Dcharge p {
+  font-size: 12px;
+  color: #fff;
+}
+.body .countentSection .MainBag .BigBag .Dcharge .item {
+  display: flex;
+}
+.body .countentSection .MainBag .BigBag .Dcharge .item p {
+  padding-right: 5px;
+}
+.body .countentSection .MainBag .BigBag .Icon {
+  width: 100%;
+  height: 40px;
+  background: #e7e7e7;
+  display: flex;
+  align-items: center;
+}
+.body .countentSection .MainBag .BigBag .Icon img {
+  width: 24px;
+  margin-left: 6px;
+}
+.body .countentSection .MainBag .BigBag .Icon p {
+  padding-left: 20px;
+  font-size: 14px;
+  color: #535353;
+  font-weight: 600;
+}
+.body .countentSection .MainBag .BigBag .components {
+  width: 100%;
+  max-height: 370px;
+  overflow: auto;
+  background: #e7e6e6;
+}
+.body .countentSection .MainBag .BigBag .components .list {
+  width: 100%;
+  height: 90px;
+  background: #f8f1f1;
+  border-bottom: 1px solid #3a3939;
+  display: flex;
+  align-items: center;
+}
+.body .countentSection .MainBag .BigBag .components .list .counter {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.body .countentSection .MainBag .BigBag .components .list .counter p {
+  font-size: 16px;
+  color: #262627;
+  font-weight: 600;
+}
+.body .countentSection .MainBag .BigBag .components .list .counter .IcoN {
+  width: 100%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.body .countentSection .MainBag .BigBag .components .list .counter .IcoN:hover {
+  background: #777777;
+}
+.body .countentSection .MainBag .BigBag .components .list img {
+  height: 50px;
+  padding: 2px;
+}
+.body .countentSection .MainBag .BigBag .components .list .info {
+  padding: 4px;
+  width: 200px;
+  flex-grow: 1;
+  color: #262627;
+}
+.body .countentSection .MainBag .BigBag .components .list .info p {
+  font-size: 14px;
+}
+.body .countentSection .MainBag .BigBag .components .list .info h6 {
+  font-size: 10px;
+}
+.body .countentSection .MainBag .BigBag .components .list .price {
+  width: 46px;
+  display: flex;
+  justify-content: center;
+}
+.body .countentSection .MainBag .BigBag .components .list .cross {
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.body .countentSection .MainBag .BigBag .components .list .cross:hover {
+  color: red;
+}
+.body .countentSection .MainBag .BigBag .spacilCod {
+  height: 40px;
+  width: 100%;
+  background: #c9c9c9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.body .countentSection .MainBag .BigBag .spacilCod:hover {
+  background: #9b9b9b;
+}
+.body .countentSection .MainBag .BigBag .spacilCod p {
+  font-size: 14px;
+}
+.body .countentSection .MainBag .BigBag .placeOrder {
+  width: 100%;
+  height: 60px;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body .countentSection .MainBag .BigBag .placeOrder .Order, .body .countentSection .MainBag .BigBag .placeOrder .amount {
+  width: 150px;
+  height: 40px;
+  background: #ca0000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.body .countentSection .MainBag .BigBag .placeOrder .Order {
+  border-radius: 3px 0 0 3px;
+  background: #ce1b1b;
+}
+.body .countentSection .MainBag .BigBag .placeOrder .Order:hover {
+  background: #ee5252;
+}
+.body .countentSection .MainBag .BigBag .placeOrder .amount {
+  border-radius: 0 3px 3px 0;
+  background: #a80000;
+}
+.body .countentSection .MainBag .BigBag .placeOrder .amount:hover {
+  background: #ee5252;
+}
+.body .countentSection .MainBag .BigBag.Hide {
+  transform: translateY(0px);
+}
+.body .countentSection .MainBag .smallBag {
+  display: block;
+  position: absolute;
+  width: 90px;
+  cursor: pointer;
+  height: 90px;
+  overflow: hidden;
+  right: 0;
+  top: 50%;
+}
+.body .countentSection .MainBag .smallBag:hover {
+  box-shadow: 0 0px 20px 0px #000;
+}
+.body .countentSection .MainBag .smallBag .bagImg {
+  background: #888888;
+  width: 100%;
+  height: 60%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.body .countentSection .MainBag .smallBag .bagImg img {
+  width: 20px;
+}
+.body .countentSection .MainBag .smallBag .bagImg p {
+  color: #ffef09;
+  font-weight: 500;
+  padding-top: 4px;
+}
+.body .countentSection .MainBag .smallBag .PricE {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40%;
+  background: #c0bfbf;
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+}
+.body .countentSection .MainBag .smallBag.Hide {
+  display: none;
+}
+.body .countentSection .MainBag .lowerBag {
+  width: 100%;
+  height: 50px;
+  background: #f00;
+  position: absolute;
+  bottom: 0;
+  display: none;
+}
+.body .countentSection .MainBag .lowerBag .bagContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+.body .countentSection .MainBag .lowerBag .bagContent .Icons {
+  height: 100%;
+  background: #fff;
+  width: 100px;
+  font-size: 30px;
+  color: rgb(194, 3, 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.body .countentSection .MainBag .lowerBag .bagContent .Icons:hover {
+  color: #00a862;
+}
+.body .countentSection .MainBag .lowerBag .bagContent .pLaceOrder {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+.body .countentSection .MainBag .lowerBag .bagContent .ImG {
+  height: 100%;
+  width: 100px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.body .countentSection .MainBag .lowerBag .bagContent .ImG img {
+  width: 28px;
+}
+.body .countentSection .MainBag .lowerBag .bagContent .ImG span {
+  position: absolute;
+  color: #fff;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(10px, -10px);
+  height: 24px;
+  border-radius: 50%;
+  background: rgb(255, 11, 11);
+}
+@media screen and (max-width: 900px) {
+  .body .countentSection .MainBag.FullShow {
+    z-index: 2;
+  }
+  .body .countentSection .MainBag {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+  }
+  .body .countentSection .MainBag .BigBag {
+    margin-top: 0;
+  }
+  .body .countentSection .MainBag .BigBag .components {
+    max-height: 420px;
+  }
+  .body .countentSection .MainBag .lowerBag.Shows {
+    display: block;
+  }
+  .body .countentSection .MainBag .smallBag {
+    display: none;
+  }
+}
 .body .countentSection .MainContent {
   position: relative;
   flex-grow: 0;
+  overflow: auto;
   margin-top: 55px;
   height: 90%;
   width: 100%;
   background: #2d01ee;
+}
+.body .countentSection .MainContent .HomeContent {
+  width: 100%;
+  height: 200vh;
 }/*# sourceMappingURL=main.css.map */
