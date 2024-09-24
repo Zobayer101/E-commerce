@@ -153,6 +153,75 @@
   height: 100%;
   display: flex;
 }
+.body .countentSection .lowerBag {
+  width: 100%;
+  height: 50px;
+  background: #f00;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  display: none;
+}
+.body .countentSection .lowerBag .bagContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+.body .countentSection .lowerBag .bagContent .Icons {
+  height: 100%;
+  background: #fff;
+  width: 100px;
+  font-size: 30px;
+  color: rgb(194, 3, 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.body .countentSection .lowerBag .bagContent .Icons:hover {
+  color: #00a862;
+}
+.body .countentSection .lowerBag .bagContent .pLaceOrder {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+.body .countentSection .lowerBag .bagContent .ImG {
+  height: 100%;
+  width: 100px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.body .countentSection .lowerBag .bagContent .ImG img {
+  width: 28px;
+}
+.body .countentSection .lowerBag .bagContent .ImG span {
+  position: absolute;
+  color: #fff;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(10px, -10px);
+  height: 24px;
+  border-radius: 50%;
+  background: rgb(255, 11, 11);
+}
+@media screen and (max-width: 900px) {
+  .body .countentSection .lowerBag.Shows {
+    display: block;
+  }
+  .body .countentSection .smallBag {
+    display: none;
+  }
+}
 .body .countentSection .MainSide {
   margin-top: 55px;
   height: 90%;
@@ -435,7 +504,8 @@
   align-items: center;
   justify-content: center;
 }
-.body .countentSection .MainBag .BigBag .placeOrder .Order, .body .countentSection .MainBag .BigBag .placeOrder .amount {
+.body .countentSection .MainBag .BigBag .placeOrder .Order,
+.body .countentSection .MainBag .BigBag .placeOrder .amount {
   width: 150px;
   height: 40px;
   background: #ca0000;
@@ -465,6 +535,7 @@
   transform: translateY(0px);
 }
 .body .countentSection .MainBag .smallBag {
+  z-index: 1;
   display: block;
   position: absolute;
   width: 90px;
@@ -507,71 +578,12 @@
 .body .countentSection .MainBag .smallBag.Hide {
   display: none;
 }
-.body .countentSection .MainBag .lowerBag {
-  width: 100%;
-  height: 50px;
-  background: #f00;
-  position: absolute;
-  bottom: 0;
-  display: none;
-}
-.body .countentSection .MainBag .lowerBag .bagContent {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-}
-.body .countentSection .MainBag .lowerBag .bagContent .Icons {
-  height: 100%;
-  background: #fff;
-  width: 100px;
-  font-size: 30px;
-  color: rgb(194, 3, 3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.body .countentSection .MainBag .lowerBag .bagContent .Icons:hover {
-  color: #00a862;
-}
-.body .countentSection .MainBag .lowerBag .bagContent .pLaceOrder {
-  font-size: 20px;
-  color: #fff;
-  font-weight: 500;
-  cursor: pointer;
-}
-.body .countentSection .MainBag .lowerBag .bagContent .ImG {
-  height: 100%;
-  width: 100px;
-  background: #eee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.body .countentSection .MainBag .lowerBag .bagContent .ImG img {
-  width: 28px;
-}
-.body .countentSection .MainBag .lowerBag .bagContent .ImG span {
-  position: absolute;
-  color: #fff;
-  width: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translate(10px, -10px);
-  height: 24px;
-  border-radius: 50%;
-  background: rgb(255, 11, 11);
-}
 @media screen and (max-width: 900px) {
   .body .countentSection .MainBag.FullShow {
     z-index: 2;
   }
   .body .countentSection .MainBag {
+    z-index: 0;
     width: 100%;
     height: 100%;
     margin-top: 0;
@@ -582,9 +594,6 @@
   .body .countentSection .MainBag .BigBag .components {
     max-height: 420px;
   }
-  .body .countentSection .MainBag .lowerBag.Shows {
-    display: block;
-  }
   .body .countentSection .MainBag .smallBag {
     display: none;
   }
@@ -594,11 +603,60 @@
   flex-grow: 0;
   overflow: auto;
   margin-top: 55px;
-  height: 90%;
+  height: 91.5%;
   width: 100%;
-  background: #2d01ee;
 }
 .body .countentSection .MainContent .HomeContent {
   width: 100%;
   height: 200vh;
+}
+.body .countentSection .MainContent .summerCounter {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+}
+.body .countentSection .MainContent .summerCounter .Carosol {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body .countentSection .MainContent .summerCounter .Carosol img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+}
+.body .countentSection .MainContent .summerCounter .connection {
+  position: relative;
+  width: 100%;
+}
+.body .countentSection .MainContent .summerCounter .connection .bar {
+  width: 100%;
+  padding: 20px;
+  height: 70px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #525252;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.body .countentSection .MainContent .summerCounter .connection .bar:hover {
+  text-decoration: underline;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD {
+  width: 230px;
+  flex-shrink: 0;
+  margin: 5px;
+  height: 300px;
+  border: 2px solid #f0c;
+}
+@media screen and (max-width: 900px) {
+  .body .countentSection .MainContent .summerCounter .Carosol img {
+    margin-top: 55px;
+  }
 }/*# sourceMappingURL=main.css.map */

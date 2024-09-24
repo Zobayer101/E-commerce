@@ -1,0 +1,55 @@
+.summerCounter {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+
+  .Carosol {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      object-fit: cover;
+      max-width: 100%;
+    }
+  }
+  .connection {
+    position: relative;
+    width: 100%;
+    .bar {
+      width: 100%;
+      padding: 20px;
+      height: 70px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #525252;
+      cursor: pointer;
+      transition: .3s;
+     // background: #a8a6a6;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .ItemSection{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      .carD{
+        width: 230px;
+        flex-shrink: 0;
+        margin: 5px;
+        height: 300px;
+        border: 2px solid #f0c;
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .summerCounter {
+    .Carosol {
+      img {
+        margin-top: 55px;
+      }
+    }
+  }
+}

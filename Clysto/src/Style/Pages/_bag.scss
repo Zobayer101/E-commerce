@@ -7,14 +7,14 @@
   width: 320px;
   height: 90%;
   .BigBag {
-   
     margin-top: 55px;
     height: 100%;
     width: 100%;
+    
     // display: none;
     box-shadow: -5px -4px 20px 0px rgb(56, 52, 52);
-   transform: translateY(-1500px);
-    transition: .4s;
+    transform: translateY(-1500px);
+    transition: 0.4s;
     .Header {
       width: 100%;
       height: 50px;
@@ -42,7 +42,6 @@
         background: #b1b0b0;
         color: rgb(143, 0, 0);
         cursor: pointer;
-        
       }
     }
     .Dcharge {
@@ -52,15 +51,15 @@
       display: flex;
       align-items: center;
       justify-content: space-around;
-      p{
+      p {
         font-size: 12px;
-        color:#fff;
+        color: #fff;
       }
-      .item{
+      .item {
         display: flex;
-       p{
-        padding-right: 5px;
-       }
+        p {
+          padding-right: 5px;
+        }
       }
     }
     .Icon {
@@ -69,11 +68,11 @@
       background: #e7e7e7;
       display: flex;
       align-items: center;
-      img{
+      img {
         width: 24px;
         margin-left: 6px;
       }
-      p{
+      p {
         padding-left: 20px;
         font-size: 14px;
         color: #535353;
@@ -85,69 +84,69 @@
       max-height: 370px;
       overflow: auto;
       background: #e7e6e6;
-      .list{
+      .list {
         width: 100%;
         height: 90px;
         background: #f8f1f1;
         border-bottom: 1px solid #3a3939;
         display: flex;
         align-items: center;
-        .counter{
+        .counter {
           width: 60px;
           height: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: space-around;
-          p{
+          p {
             font-size: 16px;
             color: #262627;
             font-weight: 600;
           }
-          .IcoN{
+          .IcoN {
             width: 100%;
             font-size: 20px;
             cursor: pointer;
-            transition: .2s;
-            &:hover{
+            transition: 0.2s;
+            &:hover {
               background: #777777;
             }
           }
         }
-        img{
+        img {
           height: 50px;
           padding: 2px;
         }
-        .info{
+        .info {
           padding: 4px;
           width: 200px;
           flex-grow: 1;
           color: #262627;
-          p{
+          p {
             font-size: 14px;
           }
-          h6{
+          h6 {
             font-size: 10px;
           }
         }
-        .price{
+        .price {
           width: 46px;
           display: flex;
           justify-content: center;
         }
-        .cross{
+        .cross {
           width: 30px;
           justify-content: center;
           align-items: center;
-          transition: .3s;
+          transition: 0.3s;
           cursor: pointer;
-          &:hover{
+          &:hover {
             color: red;
           }
         }
       }
     }
-    .spacilCod{
+    .spacilCod {
       height: 40px;
       width: 100%;
       background: #c9c9c9;
@@ -157,20 +156,23 @@
       gap: 10px;
       font-size: 20px;
       cursor: pointer;
-      transition: .2s;
-      &:hover{
-       background: #9b9b9b;
+      transition: 0.2s;
+      &:hover {
+        background: #9b9b9b;
       }
-      p{font-size: 14px;}
+      p {
+        font-size: 14px;
+      }
     }
-    .placeOrder{
+    .placeOrder {
       width: 100%;
       height: 60px;
       background: #e0e0e0;
       display: flex;
       align-items: center;
       justify-content: center;
-      .Order,.amount{
+      .Order,
+      .amount {
         width: 150px;
         height: 40px;
         background: #ca0000;
@@ -180,58 +182,59 @@
         justify-content: center;
         font-weight: 500;
         cursor: pointer;
-        transition: .2s;
+        transition: 0.2s;
       }
-      .Order{
+      .Order {
         border-radius: 3px 0 0 3px;
-      background: #ce1b1b;
-      &:hover{
-        background: #ee5252;
+        background: #ce1b1b;
+        &:hover {
+          background: #ee5252;
+        }
       }
-    }
-      .amount{
-border-radius: 0 3px 3px 0; 
-background: #a80000;
-&:hover{
-        background: #ee5252;
-      }
+      .amount {
+        border-radius: 0 3px 3px 0;
+        background: #a80000;
+        &:hover {
+          background: #ee5252;
+        }
       }
     }
   }
-  .BigBag.Hide{
+  .BigBag.Hide {
     transform: translateY(0px);
   }
-  .smallBag{
+  .smallBag {
+    z-index: 1;
     display: block;
     position: absolute;
     width: 90px;
     cursor: pointer;
     height: 90px;
     overflow: hidden;
-    &:hover{
+    &:hover {
       box-shadow: 0 0px 20px 0px #000;
     }
     right: 0;
     top: 50%;
-    .bagImg{
+    .bagImg {
       background: #888888;
       width: 100%;
-      
+
       height: 60%;
-     justify-content: center;
+      justify-content: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      img{
+      img {
         width: 20px;
       }
-      p{
+      p {
         color: #ffef09;
         font-weight: 500;
         padding-top: 4px;
       }
     }
-    .PricE{
+    .PricE {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -242,93 +245,33 @@ background: #a80000;
       font-weight: 600;
     }
   }
-  .smallBag.Hide{
+  .smallBag.Hide {
     display: none;
   }
-  .lowerBag{
-    width: 100%;
-    height: 50px;
-    background: #f00;
-    position: absolute;
-    bottom: 0;
-   
-    display: none;
-    .bagContent{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
-     width: 100%;
-     .Icons{
-      height: 100%;
-      background: #fff;
-      width: 100px;
-      font-size: 30px;
-      color: rgb(194, 3, 3);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: .3s;
-      &:hover{
-        color:#00a862;
-      }
-    }
-    .pLaceOrder{
-     font-size: 20px;
-     color: #fff;
-     font-weight: 500;
-     cursor: pointer;
-    }
-    .ImG{
-      height: 100%;
-      width: 100px;
-      background: #eee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      img{
-        width: 28px;
-      }
-      span{
-        position: absolute;
-        color: #fff;
-        width: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: translate(10px,-10px);
-        height: 24px;
-        border-radius: 50%;
-        background: rgb(255, 11, 11);
-      }
-    }
-    }
-  }
+ 
 }
-@media screen and (max-width:900px) {
- .MainBag.FullShow{
-z-index: 2;
- }
-  .MainBag{
+
+@media screen and (max-width: 900px) {
+  
+  .MainBag.FullShow {
+    z-index: 2;
+  }
+  .MainBag {
     //color: #00a862;
-    
+    z-index: 0;
     width: 100%;
     height: 100%;
-    
+
     margin-top: 0;
-    .BigBag{
+    .BigBag {
       margin-top: 0;
-      .components{
+      .components {
         max-height: 420px;
       }
     }
-.lowerBag.Shows{
-  display: block;
-}
-    .smallBag{
-    display: none;
-  }
+    
+    .smallBag {
+      display: none;
+    }
   }
 }

@@ -5,14 +5,14 @@ import { RxCross2 } from "react-icons/rx";
 import { TfiArrowCircleUp } from "react-icons/tfi";
 import { useDispatch, useSelector } from "react-redux";
 import { openBag } from "../Fetuare/Them";
-import { HiOutlineChatAlt2 } from "react-icons/hi";
+
 
 const Bag = () => {
   const { bag } = useSelector((state) => state.Bar);
   const dispach = useDispatch();
 
   return (
-    <div className={bag?"MainBag FullShow":"MainBag"}>
+    <div className={bag?"MainBag FullShow":"MainBag Hide"}>
       <div className={bag ? "BigBag Hide" : "BigBag "}>
         <div className="Header">
           <div className="sector">
@@ -147,18 +147,7 @@ const Bag = () => {
         </div>
         <div className="PricE">৳ 150</div>
       </div>
-      <div className={bag ? "lowerBag " : "lowerBag Shows"}>
-        <div className="bagContent">
-          <div className="Icons">
-            <HiOutlineChatAlt2 />
-          </div>
-          <div className="pLaceOrder">Place Order</div>
-          <div className="ImG" onClick={() => dispach(openBag())}>
-            <img src="../src/Icon/sidebar/IconPng/Bag.png" />
-            <span>16</span>
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 };

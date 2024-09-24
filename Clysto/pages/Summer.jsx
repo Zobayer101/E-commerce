@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Bag from "../components/Bag";
+import Bottom_bag from "../components/HoroiganralBag";
 
 function Summer() {
   return (
@@ -9,13 +10,43 @@ function Summer() {
       <Header />
       <div className="countentSection">
         <Sidebar />
-        <Bag/>
+        <Bag />
         <div className="MainContent">
           <div className="summerCounter">
-
+            <div className="Carosol">
+              <img src="../src/img/summer-collection.webp" />
+            </div>
+            <div className="connection">
+              <p className="bar">Summer Collection</p>
+              <div className="ItemSection">
+                {/* -------------------------------------------- */}
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                <div className="carD"></div>
+                {/* _____________________________________________ */}
+              </div>
+            </div>
           </div>
-          
         </div>
+        <Bottom_bag />
       </div>
     </>
   );

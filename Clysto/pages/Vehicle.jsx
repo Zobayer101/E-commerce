@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Bag from "../components/Bag";
+import Bottom_bag from "../components/HoroiganralBag";
 
 
 function Vehicle() {
@@ -15,6 +16,7 @@ function Vehicle() {
           <h1>Vehicle page</h1>
           <Link to={"/offers"}>Goto The offers</Link>
         </div>
+        <Bottom_bag/>
       </div>
     </>
   );
