@@ -268,6 +268,21 @@
   font-size: 14px;
   color: #5f5e5e;
 }
+.HomeContent .allTime {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.HomeContent .allTime .ImgBox {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+}
+.HomeContent .allTime .ImgBox img {
+  padding: 15px;
+  width: 100%;
+}
 
 .body {
   height: 100vh;
@@ -462,7 +477,7 @@
 .body .countentSection .MainBag {
   flex-shrink: 0;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   right: 0;
   width: 320px;
   height: 90%;
@@ -662,58 +677,15 @@
 .body .countentSection .MainBag .BigBag.Hide {
   transform: translateY(0px);
 }
-.body .countentSection .MainBag .smallBag {
-  z-index: 1;
-  display: block;
-  position: absolute;
-  width: 90px;
-  opacity: 0.6;
-  cursor: pointer;
-  height: 90px;
-  overflow: hidden;
-  right: 0;
-  top: 50%;
-}
-.body .countentSection .MainBag .smallBag:hover {
-  opacity: 1;
-  box-shadow: 0 0px 20px 0px #000;
-}
-.body .countentSection .MainBag .smallBag .bagImg {
-  background: #888888;
-  width: 100%;
-  height: 60%;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.body .countentSection .MainBag .smallBag .bagImg img {
-  width: 20px;
-}
-.body .countentSection .MainBag .smallBag .bagImg p {
-  color: #ffef09;
-  font-weight: 500;
-  padding-top: 4px;
-}
-.body .countentSection .MainBag .smallBag .PricE {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 40%;
-  background: #c0bfbf;
-  color: rgb(85, 85, 85);
-  font-weight: 600;
-}
-.body .countentSection .MainBag .smallBag.Hide {
-  display: none;
+.body .countentSection .MainBag.FullShow {
+  z-index: 2;
 }
 @media screen and (max-width: 900px) {
   .body .countentSection .MainBag.FullShow {
     z-index: 2;
   }
   .body .countentSection .MainBag {
-    z-index: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
     margin-top: 0;
@@ -724,7 +696,55 @@
   .body .countentSection .MainBag .BigBag .components {
     max-height: 420px;
   }
-  .body .countentSection .MainBag .smallBag {
+}
+.body .countentSection .smallBag {
+  z-index: 3;
+  display: block;
+  position: absolute;
+  width: 90px;
+  opacity: 0.6;
+  cursor: pointer;
+  height: 90px;
+  overflow: hidden;
+  right: 0;
+  top: 50%;
+}
+.body .countentSection .smallBag:hover {
+  opacity: 1;
+  box-shadow: 0 0px 20px 0px #000;
+}
+.body .countentSection .smallBag .bagImg {
+  background: #888888;
+  width: 100%;
+  height: 60%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.body .countentSection .smallBag .bagImg img {
+  width: 20px;
+}
+.body .countentSection .smallBag .bagImg p {
+  color: #ffef09;
+  font-weight: 500;
+  padding-top: 4px;
+}
+.body .countentSection .smallBag .PricE {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40%;
+  background: #c0bfbf;
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+}
+.body .countentSection .smallBag.Hide {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .body .countentSection .smallBag {
     display: none;
   }
 }
@@ -864,6 +884,21 @@
   text-align: center;
   font-size: 14px;
   color: #5f5e5e;
+}
+.body .countentSection .MainContent .HomeContent .allTime {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.body .countentSection .MainContent .HomeContent .allTime .ImgBox {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+}
+.body .countentSection .MainContent .HomeContent .allTime .ImgBox img {
+  padding: 15px;
+  width: 100%;
 }
 .body .countentSection .MainContent .summerCounter {
   width: 100%;

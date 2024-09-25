@@ -77,7 +77,7 @@ const Sidebar = () => {
       </Link>
       <Link to={"/personal-care"}>
         <div className="Collection">
-          <img src="../src/Icon/sidebar/personal-care (1).webp" />
+          <img src="../src/Icon/sidebar/personal-care.webp" />
           Personal Care
         </div>
       </Link>

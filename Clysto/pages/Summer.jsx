@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar";
 import Bag from "../components/Bag";
 import Bottom_bag from "../components/HoroiganralBag";
 import Card from "../components/Card";
+import SmallBag from "../components/Small-bag";
 
 function Summer() {
   return (
@@ -12,6 +13,7 @@ function Summer() {
       <div className="countentSection">
         <Sidebar />
         <Bag />
+        <SmallBag/>
         <div className="MainContent">
           <div className="summerCounter">
             <div className="Carosol">

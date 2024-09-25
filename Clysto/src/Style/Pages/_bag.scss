@@ -1,7 +1,7 @@
 .MainBag {
   flex-shrink: 0;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   right: 0;
   //background: #4bdf1e;
   width: 320px;
@@ -203,55 +203,58 @@
   .BigBag.Hide {
     transform: translateY(0px);
   }
-  .smallBag {
-    z-index: 1;
-    display: block;
-    position: absolute;
-    width: 90px;
-    opacity: .6;
-    cursor: pointer;
-    height: 90px;
-    overflow: hidden;
-    &:hover {
-      opacity: 1;
-      box-shadow: 0 0px 20px 0px #000;
-    }
-    right: 0;
-    top: 50%;
-    .bagImg {
-      background: #888888;
-      width: 100%;
+  // .smallBag {
+  //   z-index: 1;
+  //   display: block;
+  //   position: absolute;
+  //   width: 90px;
+  //   opacity: .6;
+  //   cursor: pointer;
+  //   height: 90px;
+  //   overflow: hidden;
+  //   &:hover {
+  //     opacity: 1;
+  //     box-shadow: 0 0px 20px 0px #000;
+  //   }
+  //   right: 0;
+  //   top: 50%;
+  //   .bagImg {
+  //     background: #888888;
+  //     width: 100%;
 
-      height: 60%;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      img {
-        width: 20px;
-      }
-      p {
-        color: #ffef09;
-        font-weight: 500;
-        padding-top: 4px;
-      }
-    }
-    .PricE {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 40%;
-      background: #c0bfbf;
-      color: rgb(85, 85, 85);
-      font-weight: 600;
-    }
-  }
-  .smallBag.Hide {
-    display: none;
-  }
+  //     height: 60%;
+  //     justify-content: center;
+  //     display: flex;
+  //     flex-direction: column;
+  //     align-items: center;
+  //     img {
+  //       width: 20px;
+  //     }
+  //     p {
+  //       color: #ffef09;
+  //       font-weight: 500;
+  //       padding-top: 4px;
+  //     }
+  //   }
+  //   .PricE {
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //     width: 100%;
+  //     height: 40%;
+  //     background: #c0bfbf;
+  //     color: rgb(85, 85, 85);
+  //     font-weight: 600;
+  //   }
+  // }
+  // .smallBag.Hide {
+  //   display: none;
+  // }
  
 }
+.MainBag.FullShow {
+    z-index: 2;
+  }
 
 @media screen and (max-width: 900px) {
   
@@ -260,7 +263,7 @@
   }
   .MainBag {
     //color: #00a862;
-    z-index: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
 
@@ -272,8 +275,8 @@
       }
     }
     
-    .smallBag {
-      display: none;
-    }
+    // .smallBag {
+    //   display: none;
+    // }
   }
 }

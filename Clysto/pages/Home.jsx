@@ -6,13 +6,17 @@ import Bottom_bag from "../components/HoroiganralBag";
 import { FcPrevious } from "react-icons/fc";
 import { FcNext } from "react-icons/fc";
 import { useEffect, useRef, useState } from "react";
+import SmallBag from "../components/Small-bag";
 
 const Home = () => {
   const scroll = useRef([]);
   const [slide, setSlide] = useState(0);
   useEffect(() => {
+    if (slide > 0 || slide < -1400) setSlide(0);
+
     scroll.current.style = `transform: translateX(${slide}px);`;
-  
+
+    // console.log(slide);
   }, [slide]);
   return (
     <>
@@ -20,6 +24,7 @@ const Home = () => {
       <div className="countentSection">
         <Sidebar />
         <Bag />
+        <SmallBag/>
         <div className="MainContent">
           <div className="HomeContent">
             <div className="headers">
@@ -70,104 +75,114 @@ const Home = () => {
               <div className="CardWraper" ref={scroll}>
                 {/* ---------------------------- */}
                 <div className="card">
-                  <Link>
+                  <Link to={"/food"}>
                     <img src="../src/Icon/web/fruitsAndVegs.png" />
                     <p>Fruits & Vegetables</p>
                   </Link>
                 </div>
                 {/* -------------------------- */}
                 <div className="card">
-                  <Link>
+                  <Link to={"/food"}>
                     <img src="../src/Icon/web/meatAndFish.png" />
                     <p>Meat & Fish</p>
                   </Link>
                 </div>
                 {/* -------------------------- */}
                 <div className="card">
-                  <Link>
+                  <Link to={"/flash-sales"}>
                     <img src="../src/Icon/web/cooking.png" />
                     <p>Cooking</p>
                   </Link>
                 </div>
                 {/* -------------------------- */}
                 <div className="card">
-                  <Link>
+                  <Link to={"/summer-collection"}>
                     <img src="../src/Icon/web/beverages.png" />
                     <p>Beverages</p>
                   </Link>
                 </div>
                 {/* -------------------------- */}
                 <div className="card">
-                  <Link>
+                  <Link to={"/cleaning"}>
                     <img src="../src/Icon/sidebar/home-cleaning.png" />
                     <p>Home & Cleaning</p>
                   </Link>
                 </div>
                 {/* -------------------------- */}
                 <div className="card">
-                  <Link>
+                  <Link to={"/hygiene"}>
                     <img src="../src/img/pest-control.png" />
                     <p>Pest Control</p>
                   </Link>
                 </div>
                 {/* -------------------------- */}
                 <div className="card">
-                  <Link>
-                    <img src="../src/Icon/web/fruitsAndVegs.png" />
-                    <p>Fruits & Vegetables</p>
+                  <Link to={"/stationery-office"}>
+                    <img src="../src/img/stationary.png" />
+                    <p>Stationery & Office</p>
                   </Link>
                 </div>
                 {/* -------------------------- */}
                 <div className="card">
-                  <Link>
-                    <img src="../src/Icon/web/fruitsAndVegs.png" />
-                    <p>Fruits & Vegetables</p>
+                  <Link to={"/beauty"}>
+                    <img src="../src/img/beauty.png" />
+                    <p>Beauty Products</p>
                   </Link>
                 </div>
                 {/* -------------------------- */}
                 <div className="card">
-                  <Link>
-                    <img src="../src/Icon/web/fruitsAndVegs.png" />
-                    <p>Fruits & Vegetables</p>
+                  <Link to={"/personal-care"}>
+                    <img src="../src/img/healthCare.png" />
+                    <p>Health Products</p>
                   </Link>
                 </div>
                 {/* -------------------------- */}
                 <div className="card">
-                  <Link>
-                    <img src="../src/Icon/web/fruitsAndVegs.png" />
-                    <p>Fruits & Vegetables</p>
+                  <Link to={"/pet-care"}>
+                    <img src="../src/Icon/web/petFood.png" />
+                    <p>Pet Care</p>
                   </Link>
                 </div>
                 {/* -------------------------- */}
                 <div className="card">
-                  <Link>
-                    <img src="../src/Icon/web/fruitsAndVegs.png" />
-                    <p>Fruits & Vegetables</p>
+                  <Link to={"/home-kitchen"}>
+                    <img src="../src/img/kitchen-appliances.png" />
+                    <p>Kichen Appliances</p>
                   </Link>
                 </div>
                 {/* -------------------------- */}
                 <div className="card">
-                  <Link>
-                    <img src="../src/Icon/web/fruitsAndVegs.png" />
-                    <p>Fruits & Vegetables</p>
+                  <Link to={"/baby-care"}>
+                    <img src="../src/img/baby-care.png" />
+                    <p>Baby Care</p>
                   </Link>
                 </div>
                 {/* -------------------------- */}
-                <div className="card">
-                  <Link>
-                    <img src="../src/Icon/web/fruitsAndVegs.png" />
-                    <p>Fruits & Vegetables</p>
-                  </Link>
-                </div>
-                {/* -------------------------- */}
-                <div className="card">
-                  <Link>
-                    <img src="../src/Icon/web/fruitsAndVegs.png" />
-                    <p>Fruits & Vegetables</p>
-                  </Link>
-                </div>
               </div>
-              {/* -------------------------- */}
+            </div>
+            <div className="titleText">Popular on Clysto</div>
+            <div className="allTime">
+              <div className="ImgBox">
+                <img src="../src/Icon/web/pran.png" />
+              </div>
+              <div className="ImgBox">
+                <img src="../src/Icon/web/nestle.png" />
+              </div>
+              <div className="ImgBox">
+                <img src="../src/Icon/web/reckitt.png" />
+              </div>
+              <div className="ImgBox">
+                <img src="../src/Icon/web/uniliver.png" />
+              </div>
+              <div className="ImgBox">
+                <img src="../src/Icon/web/godrej-seeklogo.png" />
+              </div>
+              <div className="ImgBox">
+                <img src="../src/Icon/web/coca-cola.png" />
+              </div>
+              <div className="ImgBox">
+                <img src="../src/Icon/web/fresh.png" />
+              </div>
             </div>
             <div className="titleText">Popular on Clysto</div>
           </div>

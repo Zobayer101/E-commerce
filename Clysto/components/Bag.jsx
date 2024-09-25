@@ -137,7 +137,7 @@ const Bag = () => {
           <div className="amount">39৳</div>
         </div>
       </div>
-      <div
+      {/* <div
         className={bag ? "smallBag Hide" : "smallBag"}
         onClick={() => dispach(openBag())}
       >
@@ -146,7 +146,7 @@ const Bag = () => {
           <p>12 Item</p>
         </div>
         <div className="PricE">৳ 150</div>
-      </div>
+      </div> */}
       
     </div>
   );

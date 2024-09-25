@@ -136,4 +136,19 @@
       }
     }
   }
+  .allTime{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .ImgBox{
+      width: 110px;
+      height: 110px;
+      flex-shrink: 0;
+      img{
+        padding: 15px;
+        width: 100%;
+      }
+    }
+  }
 }
