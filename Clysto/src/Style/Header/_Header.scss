@@ -7,7 +7,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: #ebd50b;
+        background: #ffd51a;
         z-index: 2;
         .section1,.section2,.section3{
             height: 100%;
@@ -34,7 +34,7 @@
             cursor: pointer;
             font-size: 30px;
             &:hover{
-                background: #bd981f;
+                background: #d3a819;
             }
         }
         .logo{

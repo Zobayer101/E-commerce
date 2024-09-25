@@ -24,23 +24,20 @@
       font-size: 16px;
       color: #525252;
       cursor: pointer;
-      transition: .3s;
-     // background: #a8a6a6;
+      transition: 0.3s;
+      // background: #a8a6a6;
       &:hover {
         text-decoration: underline;
       }
     }
-    .ItemSection{
+    .ItemSection {
       width: 100%;
       display: flex;
+      gap: 10px;
+      justify-content: center;
       flex-wrap: wrap;
-      .carD{
-        width: 230px;
-        flex-shrink: 0;
-        margin: 5px;
-        height: 300px;
-        border: 2px solid #f0c;
-      }
+      @import "./card";
+      
     }
   }
 }

@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #ebd50b;
+  background: #ffd51a;
   z-index: 2;
 }
 .barCountuner .section1, .barCountuner .section2, .barCountuner .section3 {
@@ -39,7 +39,7 @@
   font-size: 30px;
 }
 .barCountuner .section1 .bar:hover {
-  background: #bd981f;
+  background: #d3a819;
 }
 .barCountuner .section1 .logo {
   height: 100%;
@@ -141,7 +141,132 @@
 }
 .HomeContent {
   width: 100%;
-  height: 200vh;
+  height: auto;
+  overflow: auto;
+}
+.HomeContent .headers {
+  position: relative;
+  width: 100%;
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../../src/img/landingBanner.png");
+  height: 380px;
+}
+.HomeContent .headers .InnerBox {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.HomeContent .headers .InnerBox .texts {
+  width: 500px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  flex-shrink: 0;
+}
+.HomeContent .headers .InnerBox .texts h2 {
+  font-size: 28px;
+}
+.HomeContent .headers .InnerBox .Img {
+  height: 100%;
+}
+.HomeContent .headers .InnerBox .Img img {
+  height: 100%;
+}
+.HomeContent .OurFasility {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: center;
+}
+.HomeContent .OurFasility .smallbox {
+  width: 40%;
+  margin: 4px;
+  border: 1px solid #c9c7c7;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.HomeContent .OurFasility .smallbox img {
+  width: 22px;
+  margin: 0 10px 0 0;
+}
+.HomeContent .OurFasility .smallbox p {
+  flex-wrap: wrap;
+  padding: 5px;
+  font-size: 12px;
+  color: #777575;
+}
+.HomeContent .OurFasility .smallbox p span {
+  color: red;
+}
+.HomeContent .titleText {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  color: #5f5e5e;
+  font-size: 20px;
+  font-weight: 500;
+}
+.HomeContent .popularCat {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.HomeContent .popularCat .Left,
+.HomeContent .popularCat .Right {
+  z-index: 1;
+  height: 30px;
+  width: 30px;
+  border: 2px solid rgb(0, 216, 187);
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  cursor: pointer;
+  margin: 0 20px 0 20px;
+  align-items: center;
+  justify-content: center;
+}
+.HomeContent .popularCat .Right {
+  right: 0;
+}
+.HomeContent .popularCat .CardWraper {
+  width: 100%;
+  transition: 1s;
+  display: flex;
+}
+.HomeContent .popularCat .CardWraper .card {
+  width: 150px;
+  flex-shrink: 0;
+  height: 180px;
+  padding: 5px;
+  box-shadow: inset 0 0 4px 1px rgba(85, 85, 85, 0.466);
+  margin-left: 20px;
+  border-radius: 10px;
+}
+.HomeContent .popularCat .CardWraper .card a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.HomeContent .popularCat .CardWraper .card a img {
+  width: 80%;
+}
+.HomeContent .popularCat .CardWraper .card a p {
+  text-align: center;
+  font-size: 14px;
+  color: #5f5e5e;
 }
 
 .body {
@@ -241,6 +366,9 @@
   padding: 5px;
   align-items: center;
   justify-content: space-around;
+}
+.body .countentSection .MainSide .mainItem .grocery {
+  background: rgba(216, 4, 4, 0.904);
 }
 .body .countentSection .MainSide .mainItem div {
   cursor: pointer;
@@ -539,6 +667,7 @@
   display: block;
   position: absolute;
   width: 90px;
+  opacity: 0.6;
   cursor: pointer;
   height: 90px;
   overflow: hidden;
@@ -546,6 +675,7 @@
   top: 50%;
 }
 .body .countentSection .MainBag .smallBag:hover {
+  opacity: 1;
   box-shadow: 0 0px 20px 0px #000;
 }
 .body .countentSection .MainBag .smallBag .bagImg {
@@ -608,7 +738,132 @@
 }
 .body .countentSection .MainContent .HomeContent {
   width: 100%;
-  height: 200vh;
+  height: auto;
+  overflow: auto;
+}
+.body .countentSection .MainContent .HomeContent .headers {
+  position: relative;
+  width: 100%;
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../../src/img/landingBanner.png");
+  height: 380px;
+}
+.body .countentSection .MainContent .HomeContent .headers .InnerBox {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.body .countentSection .MainContent .HomeContent .headers .InnerBox .texts {
+  width: 500px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  flex-shrink: 0;
+}
+.body .countentSection .MainContent .HomeContent .headers .InnerBox .texts h2 {
+  font-size: 28px;
+}
+.body .countentSection .MainContent .HomeContent .headers .InnerBox .Img {
+  height: 100%;
+}
+.body .countentSection .MainContent .HomeContent .headers .InnerBox .Img img {
+  height: 100%;
+}
+.body .countentSection .MainContent .HomeContent .OurFasility {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: center;
+}
+.body .countentSection .MainContent .HomeContent .OurFasility .smallbox {
+  width: 40%;
+  margin: 4px;
+  border: 1px solid #c9c7c7;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.body .countentSection .MainContent .HomeContent .OurFasility .smallbox img {
+  width: 22px;
+  margin: 0 10px 0 0;
+}
+.body .countentSection .MainContent .HomeContent .OurFasility .smallbox p {
+  flex-wrap: wrap;
+  padding: 5px;
+  font-size: 12px;
+  color: #777575;
+}
+.body .countentSection .MainContent .HomeContent .OurFasility .smallbox p span {
+  color: red;
+}
+.body .countentSection .MainContent .HomeContent .titleText {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  color: #5f5e5e;
+  font-size: 20px;
+  font-weight: 500;
+}
+.body .countentSection .MainContent .HomeContent .popularCat {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.body .countentSection .MainContent .HomeContent .popularCat .Left,
+.body .countentSection .MainContent .HomeContent .popularCat .Right {
+  z-index: 1;
+  height: 30px;
+  width: 30px;
+  border: 2px solid rgb(0, 216, 187);
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  cursor: pointer;
+  margin: 0 20px 0 20px;
+  align-items: center;
+  justify-content: center;
+}
+.body .countentSection .MainContent .HomeContent .popularCat .Right {
+  right: 0;
+}
+.body .countentSection .MainContent .HomeContent .popularCat .CardWraper {
+  width: 100%;
+  transition: 1s;
+  display: flex;
+}
+.body .countentSection .MainContent .HomeContent .popularCat .CardWraper .card {
+  width: 150px;
+  flex-shrink: 0;
+  height: 180px;
+  padding: 5px;
+  box-shadow: inset 0 0 4px 1px rgba(85, 85, 85, 0.466);
+  margin-left: 20px;
+  border-radius: 10px;
+}
+.body .countentSection .MainContent .HomeContent .popularCat .CardWraper .card a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.body .countentSection .MainContent .HomeContent .popularCat .CardWraper .card a img {
+  width: 80%;
+}
+.body .countentSection .MainContent .HomeContent .popularCat .CardWraper .card a p {
+  text-align: center;
+  font-size: 14px;
+  color: #5f5e5e;
 }
 .body .countentSection .MainContent .summerCounter {
   width: 100%;
@@ -646,14 +901,193 @@
 .body .countentSection .MainContent .summerCounter .connection .ItemSection {
   width: 100%;
   display: flex;
+  gap: 10px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .body .countentSection .MainContent .summerCounter .connection .ItemSection .carD {
-  width: 230px;
+  width: 220px;
   flex-shrink: 0;
   margin: 5px;
-  height: 300px;
-  border: 2px solid #f0c;
+  height: 350px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: inset 0 0 5px 0.3px rgba(54, 54, 54, 0.788);
+  padding: 4px;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg {
+  position: relative;
+  width: 100%;
+  height: 87%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .texts {
+  position: absolute;
+  transform: scale(0.3);
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 152, 245, 0.4941176471);
+  font-weight: 600;
+  border-radius: 5px;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .texts .dicrice {
+  width: 50px;
+  z-index: 1;
+  opacity: 0;
+  height: 50px;
+  background: #c2c0c0;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(15px, 106px);
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .texts p {
+  position: relative;
+  text-align: center;
+  top: 50%;
+  color: #fff9f9;
+  cursor: pointer;
+  font-size: 25px;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .texts .addBag {
+  width: 100%;
+  position: relative;
+  height: 90%;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .texts .addBag .price, .body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .texts .addBag .InBag {
+  top: 10%;
+  text-align: center;
+  font-size: 16px;
+  color: rgb(189, 219, 14);
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .texts .addBag .box {
+  position: relative;
+  top: 50px;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30px;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .texts .addBag .box .nag, .body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .texts .addBag .box .pos {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: rgb(0, 255, 149);
+  border: 2px solid rgb(247, 246, 246);
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .texts .addBag .box .num {
+  font-weight: 600;
+  font-size: 35px;
+  color: #fbfaff;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .texts .addBag .InBag {
+  top: 30%;
+  color: #fff;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .texts .Ditels {
+  width: 100%;
+  height: 30px;
+  color: #a7a5a5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+  font-size: 13px;
+  border-radius: 0 0 5px 5px;
+  background: #8606ff;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg:hover .texts {
+  opacity: 1;
+  transform: scale(1);
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg img {
+  width: 90%;
+  opacity: 1;
+  backface-visibility: hidden;
+  display: flex;
+  margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg p {
+  padding: 5px;
+  font-size: 13px;
+  text-align: center;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .price {
+  color: rgb(13, 138, 1);
+  font-size: 16px;
+  font-weight: 600;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductImg .price span {
+  margin-right: 7px;
+  font-size: 14px;
+  color: #b40202;
+  text-decoration: line-through;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductBTN {
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+  height: 10%;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductBTN .Addbtn {
+  border: none;
+  border-radius: 8px;
+  box-shadow: inset -2px -2px 6px 1px #ffffff, 2px 2px 5px 1px rgb(177, 174, 174);
+  width: 100%;
+  height: 100%;
+  color: rgb(235, 83, 83);
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductBTN .Addbtn span {
+  font-size: 16px;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductBTN .countbtn {
+  border: none;
+  border-radius: 8px;
+  box-shadow: inset -2px -2px 6px 1px #ffffff, 2px 2px 5px 1px rgb(177, 174, 174);
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductBTN .countbtn .navative, .body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductBTN .countbtn .inbag, .body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductBTN .countbtn .positive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  width: 35px;
+  background: rgb(3, 180, 3);
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductBTN .countbtn .navative {
+  border-right: 1px solid #acacac;
+  border-radius: 5px 0 0 5px;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductBTN .countbtn .inbag {
+  flex-grow: 1;
+}
+.body .countentSection .MainContent .summerCounter .connection .ItemSection .carD .ProductBTN .countbtn .positive {
+  border-left: 1px solid #acacac;
+  border-radius: 0 5px 5px 0;
 }
 @media screen and (max-width: 900px) {
   .body .countentSection .MainContent .summerCounter .Carosol img {

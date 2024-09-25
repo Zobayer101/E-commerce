@@ -208,10 +208,12 @@
     display: block;
     position: absolute;
     width: 90px;
+    opacity: .6;
     cursor: pointer;
     height: 90px;
     overflow: hidden;
     &:hover {
+      opacity: 1;
       box-shadow: 0 0px 20px 0px #000;
     }
     right: 0;

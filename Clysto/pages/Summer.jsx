@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Bag from "../components/Bag";
 import Bottom_bag from "../components/HoroiganralBag";
+import Card from "../components/Card";
 
 function Summer() {
   return (
@@ -20,27 +21,19 @@ function Summer() {
               <p className="bar">Summer Collection</p>
               <div className="ItemSection">
                 {/* -------------------------------------------- */}
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
-                <div className="carD"></div>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+               
+               
+                
                 {/* _____________________________________________ */}
               </div>
             </div>
