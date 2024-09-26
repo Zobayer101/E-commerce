@@ -6,13 +6,13 @@ import { TfiArrowCircleUp } from "react-icons/tfi";
 import { useDispatch, useSelector } from "react-redux";
 import { openBag } from "../Fetuare/Them";
 
-
 const Bag = () => {
   const { bag } = useSelector((state) => state.Bar);
+  const { bagData } = useSelector((state) => state.bigBag);
   const dispach = useDispatch();
-
+  console.log(bagData);
   return (
-    <div className={bag?"MainBag FullShow":"MainBag Hide"}>
+    <div className={bag ? "MainBag FullShow" : "MainBag Hide"}>
       <div className={bag ? "BigBag Hide" : "BigBag "}>
         <div className="Header">
           <div className="sector">
@@ -34,98 +34,28 @@ const Bag = () => {
         </div>
 
         <div className="components">
-          {/* -------------------------------------- */}
-          <div className="list">
-            <div className="counter">
-              <FcCollapse className="IcoN" />
-              <p>2</p>
-              <FcExpand className="IcoN" />
-            </div>
-            <img src="../src/img/baby-care.png" />
-            <div className="info">
-              <p>Nestle KitKat 4 Finger Chocolate Wafer (India)</p>
-              <h6>৳ 70 / 36.5 gm</h6>
-            </div>
-            <div className="price">
-              <p>39৳</p>
-            </div>
-            <div className="cross">
-              <RxCross2 />
-            </div>
-          </div>
-          <div className="list">
-            <div className="counter">
-              <FcCollapse className="IcoN" />
-              <p>2</p>
-              <FcExpand className="IcoN" />
-            </div>
-            <img src="../src/img/baby-care.png" />
-            <div className="info">
-              <p>Nestle KitKat 4 Finger Chocolate Wafer (India)</p>
-              <h6>৳ 70 / 36.5 gm</h6>
-            </div>
-            <div className="price">
-              <p>39৳</p>
-            </div>
-            <div className="cross">
-              <RxCross2 />
-            </div>
-          </div>
-          <div className="list">
-            <div className="counter">
-              <FcCollapse className="IcoN" />
-              <p>2</p>
-              <FcExpand className="IcoN" />
-            </div>
-            <img src="../src/img/baby-care.png" />
-            <div className="info">
-              <p>Nestle KitKat 4 Finger Chocolate Wafer (India)</p>
-              <h6>৳ 70 / 36.5 gm</h6>
-            </div>
-            <div className="price">
-              <p>39৳</p>
-            </div>
-            <div className="cross">
-              <RxCross2 />
-            </div>
-          </div>
-          <div className="list">
-            <div className="counter">
-              <FcCollapse className="IcoN" />
-              <p>2</p>
-              <FcExpand className="IcoN" />
-            </div>
-            <img src="../src/img/baby-care.png" />
-            <div className="info">
-              <p>Nestle KitKat 4 Finger Chocolate Wafer (India)</p>
-              <h6>৳ 70 / 36.5 gm</h6>
-            </div>
-            <div className="price">
-              <p>39৳</p>
-            </div>
-            <div className="cross">
-              <RxCross2 />
-            </div>
-          </div>
-          <div className="list">
-            <div className="counter">
-              <FcCollapse className="IcoN" />
-              <p>2</p>
-              <FcExpand className="IcoN" />
-            </div>
-            <img src="../src/img/baby-care.png" />
-            <div className="info">
-              <p>Nestle KitKat 4 Finger Chocolate Wafer (India)</p>
-              <h6>৳ 70 / 36.5 gm</h6>
-            </div>
-            <div className="price">
-              <p>39৳</p>
-            </div>
-            <div className="cross">
-              <RxCross2 />
-            </div>
-          </div>
-          {/* ------------------------- */}
+          {bagData.map((value, index) => {
+            return (
+              <div className="list" key={index}>
+                <div className="counter">
+                  <FcCollapse className="IcoN" />
+                  <p>2</p>
+                  <FcExpand className="IcoN" />
+                </div>
+                <img src="../src/img/baby-care.png" />
+                <div className="info">
+                  <p>{"value[index].id"}</p>
+                  <h6>৳ 70 / 36.5 gm</h6>
+                </div>
+                <div className="price">
+                  <p>39৳</p>
+                </div>
+                <div className="cross">
+                  <RxCross2 />
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <div className="spacilCod">
@@ -137,17 +67,6 @@ const Bag = () => {
           <div className="amount">39৳</div>
         </div>
       </div>
-      {/* <div
-        className={bag ? "smallBag Hide" : "smallBag"}
-        onClick={() => dispach(openBag())}
-      >
-        <div className="bagImg">
-          <img src="../src/Icon/sidebar/IconPng/Bag.png" />
-          <p>12 Item</p>
-        </div>
-        <div className="PricE">৳ 150</div>
-      </div> */}
-      
     </div>
   );
 };
