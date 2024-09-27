@@ -3,7 +3,7 @@ import { openBag } from "../Fetuare/Them";
 const SmallBag = () => {
     const {bag} = useSelector((state) => state.Bar);
     const dispach = useDispatch();
-    console.log(bag);
+    
     return (
       <div
         className={bag ? "smallBag Hide" : "smallBag"}

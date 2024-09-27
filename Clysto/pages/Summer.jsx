@@ -5,12 +5,9 @@ import Bag from "../components/Bag";
 import Bottom_bag from "../components/HoroiganralBag";
 import Card from "../components/Card";
 import SmallBag from "../components/Small-bag";
-import { useState } from "react";
-//import { AiTwotoneThunderbolt } from "react-icons/ai";
 
 const Summer=()=> {
-   const [counter, setCounter] = useState(Number);
-  if (counter < 0) setCounter(0);
+
   const arr = [
     {
       text: "Guava Premium (50 gm)",
@@ -56,6 +53,7 @@ const Summer=()=> {
     },
   ];
 
+ 
   return (
     <>
       <Header />
@@ -80,8 +78,7 @@ const Summer=()=> {
                     )
                   })
                 }
-             
-
+              
                 {/* _____________________________________________ */}
               </div>
             </div>

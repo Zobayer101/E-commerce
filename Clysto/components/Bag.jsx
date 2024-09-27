@@ -5,11 +5,14 @@ import { RxCross2 } from "react-icons/rx";
 import { TfiArrowCircleUp } from "react-icons/tfi";
 import { useDispatch, useSelector } from "react-redux";
 import { openBag } from "../Fetuare/Them";
+import { RemoveBag } from "../Fetuare/Bag";
 
 const Bag = () => {
   const { bag } = useSelector((state) => state.Bar);
   const { bagData } = useSelector((state) => state.bigBag);
   const dispach = useDispatch();
+  var totalPrice=0;
+  
   console.log(bagData);
   return (
     <div className={bag ? "MainBag FullShow" : "MainBag Hide"}>
@@ -17,7 +20,7 @@ const Bag = () => {
         <div className="Header">
           <div className="sector">
             <img src="../src/Icon/sidebar/IconPng/Bag.png" />
-            <p>12 Item</p>
+            <p>{bagData.length} Item</p>
           </div>
           <button onClick={() => dispach(openBag())}>close</button>
         </div>
@@ -35,22 +38,25 @@ const Bag = () => {
 
         <div className="components">
           {bagData.map((value, index) => {
+            totalPrice += Number(value.TotalPrice);
             return (
               <div className="list" key={index}>
                 <div className="counter">
                   <FcCollapse className="IcoN" />
-                  <p>2</p>
+                  <p>{value.counter+1}</p>
                   <FcExpand className="IcoN" />
                 </div>
-                <img src="../src/img/baby-care.png" />
+                <img src={value.image} />
                 <div className="info">
-                  <p>{"value[index].id"}</p>
-                  <h6>৳ 70 / 36.5 gm</h6>
+                  <p>{value.productName}</p>
+                  <h6>
+                    ৳ {value.productPrice} / {value.quintite}
+                  </h6>
                 </div>
                 <div className="price">
-                  <p>39৳</p>
+                  <p> ৳ {value.TotalPrice}</p>
                 </div>
-                <div className="cross">
+                <div className="cross" onClick={()=>dispach(RemoveBag({id:value.id}))}>
                   <RxCross2 />
                 </div>
               </div>
@@ -64,7 +70,7 @@ const Bag = () => {
         </div>
         <div className="placeOrder">
           <div className="Order">Place Order</div>
-          <div className="amount">39৳</div>
+          <div className="amount">{totalPrice}৳</div>
         </div>
       </div>
     </div>
