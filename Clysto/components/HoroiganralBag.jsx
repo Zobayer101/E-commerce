@@ -6,13 +6,13 @@ import { openBag } from "../Fetuare/Them";
 
 const Bottom_bag = () => {
   const { bag } = useSelector((state) => state.Bar);
-  const { Summer } = useSelector((state) => state.sumer);
+  const { ProductData } = useSelector((state) => state.product);
   const dispach = useDispatch();
   var Item = 0;
-  Summer.map((value) => {
+  ProductData.map((value) => {
     if (value.counter > 0) Item += 1;
   })
-   console.log(Summer);
+   console.log(ProductData);
   return (
     <div className={bag ? "lowerBag " : "lowerBag Shows"}>
       <div className="bagContent">

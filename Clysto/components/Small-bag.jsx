@@ -3,16 +3,16 @@ import { openBag } from "../Fetuare/Them";
 
 const SmallBag = () => {
   const { bag } = useSelector((state) => state.Bar);
-  const { Summer } = useSelector((state) => state.sumer);
+  const { ProductData } = useSelector((state) => state.product);
   const dispach = useDispatch();
   var Item = 0;
   var TotalPrice = 0;
-  Summer.map((value) => {
+  ProductData.map((value) => {
     if (value.counter > 0) {
       Item += 1;
       TotalPrice = Number(value.counter) * Number(value.price) + TotalPrice;
     }
-    })
+  });
  
     return (
       <div

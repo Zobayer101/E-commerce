@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import Layoutbar from "./../Fetuare/Them";
 import BigBag from "../Fetuare/Bag";
-import SummerSlice from './../Fetuare/Summer';
+import ProductSlice from "../Fetuare/Product";
 
 
 const stor = configureStore({
   reducer: {
     Bar: Layoutbar,
     bigBag: BigBag,
-    sumer: SummerSlice,
+    product: ProductSlice,
   },
 });
 

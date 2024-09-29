@@ -5,21 +5,21 @@ import { RxCross2 } from "react-icons/rx";
 import { TfiArrowCircleUp } from "react-icons/tfi";
 import { useDispatch, useSelector } from "react-redux";
 import { openBag } from "../Fetuare/Them";
-import { UpdateSummer } from "../Fetuare/Summer";
+import { UpdateProduct } from "../Fetuare/Product";
 
 const Bag = () => {
   const { bag } = useSelector((state) => state.Bar);
-  const { Summer } = useSelector((state) => state.sumer);
+  const { ProductData } = useSelector((state) => state.product);
   const dispach = useDispatch();
   var Item = 0;
   var Totalprice = 0;
-  Summer.map((value) => {
+  ProductData.map((value) => {
     if (value.counter > 0) {
       Item = Item + 1;
       Totalprice = Number(value.counter) * Number(value.price) + Totalprice;
     }
-  })
- 
+  });
+
   return (
     <div className={bag ? "MainBag FullShow" : "MainBag Hide"}>
       <div className={bag ? "BigBag Hide" : "BigBag "}>
@@ -43,7 +43,7 @@ const Bag = () => {
         </div>
 
         <div className="components">
-          {Summer.map((value, index) => {
+          {ProductData.map((value, index) => {
             if (value.counter > 0) {
               return (
                 <div className="list" key={index}>
@@ -52,7 +52,7 @@ const Bag = () => {
                       className="IcoN"
                       onClick={() => {
                         dispach(
-                          UpdateSummer({
+                          UpdateProduct({
                             id: value.id,
                             counter: Number(value.counter) + 1,
                           })
@@ -64,7 +64,7 @@ const Bag = () => {
                       className="IcoN"
                       onClick={() =>
                         dispach(
-                          UpdateSummer({
+                          UpdateProduct({
                             id: value.id,
                             counter: Number(value.counter) - 1,
                           })
@@ -85,7 +85,7 @@ const Bag = () => {
                   <div
                     className="cross"
                     onClick={() =>
-                      dispach(UpdateSummer({ id: value.id, counter: 0 }))
+                      dispach(UpdateProduct({ id: value.id, counter: 0 }))
                     }
                   >
                     <RxCross2 />

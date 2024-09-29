@@ -24,7 +24,7 @@ const Home = () => {
       <div className="countentSection">
         <Sidebar />
         <Bag />
-        <SmallBag/>
+        <SmallBag />
         <div className="MainContent">
           <div className="HomeContent">
             <div className="headers">
@@ -52,13 +52,13 @@ const Home = () => {
                 </p>
               </div>
               <div className="smallbox">
-                <img src="../src/Icon/content/Grocery Bag.png" />
+                <img src="../src/Icon/content/download (10).png" />
                 <p>
                   Get your delivery within <span>1 hour</span>
                 </p>
               </div>
               <div className="smallbox">
-                <img src="../src/Icon/content/download (10).png" />
+                <img src="../src/Icon/content/download (9).png" />
                 <p>
                   Get offers that <span>Save Money</span>
                 </p>
@@ -184,7 +184,40 @@ const Home = () => {
                 <img src="../src/Icon/web/fresh.png" />
               </div>
             </div>
-            <div className="titleText">Popular on Clysto</div>
+            <div className="titleText">Shop & Get More</div>
+            <div className="eventCard">
+              <div className="mainCard">
+                <div className="textSection">
+                  <h2>Deal of the Day</h2>
+                  <p>
+                    Stock up on your favorite groceries for less with our
+                    unbeatable deals! Don&#39;t miss out - limited stock
+                  </p>
+                </div>
+                <img src="../src/img/image.jpg" />
+              </div>
+              <div className="mainCard1">
+                <div className="textSection">
+                  <h2>Premium Care</h2>
+                  <p>
+                    Too busy to place an order or handling order issuse no need
+                    to worry as we give you option to take premium assistance
+                  </p>
+                </div>
+                <img src="../src/img/dailyDealsShopInfo.jpg" />
+              </div>
+              <div className="mainCard2">
+                <div className="textSection">
+                  <h2>Shop & Earn Points</h2>
+                  <p>
+                    The more you shop the more you earn - cash back, free
+                    shipping, exclusive offers and more. Discover the perks of
+                    Egg Club membrship
+                  </p>
+                </div>
+                <img src="../src/img/premiumImage.jpg" />
+              </div>
+            </div>
           </div>
         </div>
         <Bottom_bag />

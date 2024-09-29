@@ -42,6 +42,7 @@
   }
   .OurFasility {
     width: 100%;
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     padding: 5px;
@@ -92,7 +93,7 @@
       z-index: 1;
       height: 30px;
       width: 30px;
-      border: 2px solid rgb(0, 216, 187);
+      border: 2px solid rgb(0, 131, 87);
       border-radius: 50%;
       position: absolute;
       display: flex;
@@ -148,6 +149,35 @@
       img{
         padding: 15px;
         width: 100%;
+      }
+    }
+  }
+  .eventCard{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .mainCard,.mainCard1,.mainCard2{
+      width: 380px;
+      height: 400px;
+      margin: 10px ;
+      
+      border-radius: 8px;
+      //box-shadow: inset 0 0 10px .5px rgba(32, 32, 32, 0.747);
+      background: #e9e9e9;
+      .textSection{
+        width: 100%;
+        
+        height: 45%;
+        margin-top: 20px;
+        padding: 20px;
+        p{
+          font-size: 14px;
+        }
+      }
+      img{
+        width: 100%;
+        border-radius: 0 0px 8px 8px;
       }
     }
   }
