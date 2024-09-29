@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import Layoutbar from "./../Fetuare/Them";
 import BigBag from "../Fetuare/Bag";
-import stateCounter from './../Fetuare/Counter';
+import SummerSlice from './../Fetuare/Summer';
+
 
 const stor = configureStore({
   reducer: {
     Bar: Layoutbar,
     bigBag: BigBag,
-    count:stateCounter,
+    sumer: SummerSlice,
   },
 });
 

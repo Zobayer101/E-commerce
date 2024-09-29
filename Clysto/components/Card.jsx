@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
 import { AddIn, UpdateBag ,RemoveBag} from "../Fetuare/Bag";
 import { useDispatch, useSelector } from "react-redux";
-
+import { incremant } from "../Fetuare/Counter";
 // eslint-disable-next-line react/prop-types
 const Card = React.memo(({props: {value: { text, price, exPrice, quantity, Image }, index,}, } = {}) => {
   const [counter, setCounter] = useState(Number);
-    const { bagData } = useSelector((state) => state.bigBag);
+  const { bagData } = useSelector((state) => state.bigBag);
+  //const { counters } = useSelector((state) => state.count);
     const dispatch = useDispatch();
 
     if (counter < 0) setCounter(0);
 
     const AddToBag = (I) => {
-     
+      dispatch(incremant({id:I,value:1}))
       var data = {
         id: I,
         each: counter + 1,
@@ -23,6 +24,7 @@ const Card = React.memo(({props: {value: { text, price, exPrice, quantity, Image
         counter,
         quintite: quantity,
         image: Image,
+
       };
       let Length = bagData.length;
       let isMatchFound = true;
@@ -31,6 +33,7 @@ const Card = React.memo(({props: {value: { text, price, exPrice, quantity, Image
         for (; Length > i; i++){
          
           if (bagData[i].id == I) {
+            setCounter(counter + 1);
             dispatch(
               UpdateBag({
                 id: I,
@@ -39,7 +42,8 @@ const Card = React.memo(({props: {value: { text, price, exPrice, quantity, Image
                 counter,
               })
             );
-            isMatchFound=false;
+            isMatchFound = false;
+            
             break;
           }
         
@@ -47,25 +51,33 @@ const Card = React.memo(({props: {value: { text, price, exPrice, quantity, Image
        
       
       if (isMatchFound) {
-         dispatch(AddIn(data));
+        dispatch(AddIn(data));
+        setCounter(counter+1)
+        // if (bagData.Length < 1) {
+        // } else {
+          
+        // }
        }
 
       
   };
   const Remove = (I) => {
     bagData.map((value) => {
-      if (value.each > 1 && value.id==I) {
+      if (value.each > 1 && value.id == I) {
+        setCounter(counter - 1);
         dispatch(UpdateBag({
           id: value.id,
-          each: value.counter - 1,
+          each: value.counter,
           TotalPrice: value.TotalPrice - value.productPrice,
           counter:value.counter-1,
        }))
-      } else if (value.each <= 1 && value.id==I) {
+      } else if (value.each <= 1 && value.id == I) {
+        setCounter(counter - 1);
         dispatch(RemoveBag({ id: I }));
       }
     })
   }
+  
 
     return (
       <div className="carD">
@@ -73,12 +85,14 @@ const Card = React.memo(({props: {value: { text, price, exPrice, quantity, Image
           <div className="texts">
             <div
               className="dicrice"
-              onClick={() => {setCounter(counter - 1),Remove(index)}}
+              onClick={() => {
+                Remove(index);
+              }}
             ></div>
             <div
               className="addBag"
               onClick={() => {
-                setCounter(counter + 1), AddToBag(index);
+                AddToBag(index);
               }}
             >
               {counter ? (
@@ -112,7 +126,7 @@ const Card = React.memo(({props: {value: { text, price, exPrice, quantity, Image
               <div
                 className="navative"
                 onClick={() => {
-                  setCounter(counter - 1), Remove(index);
+                  Remove(index);
                 }}
               >
                 {" "}
@@ -121,7 +135,7 @@ const Card = React.memo(({props: {value: { text, price, exPrice, quantity, Image
               <div
                 className="inbag"
                 onClick={() => {
-                  setCounter(counter + 1), AddToBag(index);
+                  AddToBag(index);
                 }}
               >
                 {" "}
@@ -130,7 +144,7 @@ const Card = React.memo(({props: {value: { text, price, exPrice, quantity, Image
               <div
                 className="positive"
                 onClick={() => {
-                  setCounter(counter + 1), AddToBag(index);
+                  AddToBag(index);
                 }}
               >
                 {" "}
@@ -140,7 +154,9 @@ const Card = React.memo(({props: {value: { text, price, exPrice, quantity, Image
           ) : (
             <button
               className="Addbtn"
-              onClick={() => {setCounter(counter + 1), AddToBag(index)}}
+              onClick={() => {
+                AddToBag(index);
+              }}
             >
               <AiTwotoneThunderbolt className="Thunder" />{" "}
               <span>Add to bag</span>
