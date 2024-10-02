@@ -9,9 +9,9 @@
 }
 //@import "./color";
 @import "./Header/Header";
-
 @import "./Pages/home";
- .body{
+@import "./admin//dashbord";
+.body{
     height: 100vh;
     width: 100%;
    
@@ -23,6 +23,7 @@
       @import "./sidebar/sidebar";
       @import "./Pages/bag";
       @import "./Pages/smallbag";
+     
       .MainContent{
         position: relative;
         flex-grow: 0;

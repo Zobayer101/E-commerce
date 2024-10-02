@@ -1,11 +1,14 @@
 
 const express = require("express");
 const controller = require("../controller/ProductController");
-const multer = require('multer');
+const upload = require("../middleware/FileUplod");
+
 const route = express.Router();
 
-const upload = multer({ dest: "uplods/" });
 // Post api  
-route.post("/api/product/new",upload.single("image"),controller.PostProduct);
+route.post("/api/product/new", upload.single("image"), controller.PostProduct);
+
+//Summer get api
+route.get("/api/product/summer",controller.SummerConnction);
 
 module.exports=route

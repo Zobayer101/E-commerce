@@ -64,10 +64,12 @@ function Personal() {
                                 <p>Add to bag</p>
                               )}
                             </div>
-   
+
                             <div className="Ditels">Details &gt;</div>
                           </div>
-                          <img src={value.Image} />
+                          <img
+                            src={`http://localhost:3300/uploads/${value.Image}`}
+                          />
                           <p>{value.text}</p>
                           <p>{value.quantity}</p>
                           <p className="price">

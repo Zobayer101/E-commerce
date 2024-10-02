@@ -6,16 +6,32 @@ import Bottom_bag from "../components/HoroiganralBag";
 import SmallBag from "../components/Small-bag";
 import { useDispatch, useSelector } from "react-redux";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
-import { UpdateProduct } from "../Fetuare/Product";
+import { UpdateProduct, FromAPI } from "../Fetuare/Product";
+
+import { useEffect } from "react";
 
 const Summer = () => {
   const { ProductData } = useSelector((state) => state.product);
   const dispatch = useDispatch();
- 
+  useEffect(() => {
+      (async () => {
+        
+         let url= "http://localhost:3300/route/api/product/summer"
+        
+        const responce = await fetch(url, { method: "GET" });
+        let Data = await responce.json();
+        if (ProductData < 1) {
+          
+          dispatch(FromAPI(Data));
+        }
+      })();
+   },[dispatch,ProductData])
   const AddToBag = (I, counter) => {
     if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
   };
-
+ 
+  //FromAPI(Data)
+  console.log(ProductData)
   return (
     <>
       <Header />
@@ -67,10 +83,12 @@ const Summer = () => {
                                 <p>Add to bag</p>
                               )}
                             </div>
-   
+
                             <div className="Ditels">Details &gt;</div>
                           </div>
-                          <img src={value.Image} />
+                          <img
+                            src={`http://localhost:3300/uploads/${value.Image}`}
+                          />
                           <p>{value.text}</p>
                           <p>{value.quantity}</p>
                           <p className="price">

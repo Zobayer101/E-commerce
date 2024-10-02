@@ -72,7 +72,7 @@ const Bag = () => {
                       }
                     />
                   </div>
-                  <img src={value.Image} />
+                  <img src={`http://localhost:3300/uploads/${value.Image}`} />
                   <div className="info">
                     <p>{value.text}</p>
                     <h6>

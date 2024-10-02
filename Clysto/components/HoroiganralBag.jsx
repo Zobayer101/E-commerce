@@ -12,7 +12,7 @@ const Bottom_bag = () => {
   ProductData.map((value) => {
     if (value.counter > 0) Item += 1;
   })
-   console.log(ProductData);
+   
   return (
     <div className={bag ? "lowerBag " : "lowerBag Shows"}>
       <div className="bagContent">

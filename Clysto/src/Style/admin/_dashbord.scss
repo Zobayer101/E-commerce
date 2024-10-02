@@ -1,0 +1,85 @@
+
+
+.dashBord{
+    width: 100%;
+    
+    background: #dbdada;
+    h1{
+       height: 100px;
+        text-align: center;
+        padding: 5px;
+        color: rgb(117, 11, 255);
+    }
+    .ProductIMg{
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        .imgs{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 2px solid rgb(21, 255, 0);
+            position: relative;
+            img,input{
+                width: 100%;
+                position: absolute;
+                height: 100%;
+                border-radius: 50%;
+            }
+            input{
+                opacity: 0;
+                cursor: pointer;
+            }
+        }
+        p{
+            padding: 10px;
+            color: rgb(107, 107, 107);
+        }
+    }
+    .productDitials{
+        width: 100%;
+        height: 350px;
+       
+        display: flex;
+        outline: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        input,select{
+            height: 40px;
+           width: 450px;
+           margin: 0 10px 0 10px;
+           border-radius: 5px;
+           outline: none;
+           padding-left: 20px;
+           font-size: 20px;
+           border: none;
+           &:focus{
+           border: 1px solid #7512f7;
+           color: #4403f8;
+           }
+        }
+    }
+    .btn{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button{
+            width: 100px;
+            padding: 8px;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            background: #0e9c09;
+            cursor: pointer;
+            transition: .4s;
+            &:hover{
+                background: #125af7;
+            }
+        }
+    }
+}

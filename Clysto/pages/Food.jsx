@@ -30,8 +30,8 @@ function Food() {
               <p className="bar">Food</p>
               <div className="ItemSection">
                 {ProductData.map((value, index) => {
-                  if (value.Catagori == "Food") {
-                   
+                  
+                  if (value.Catagori == "food") {
                     return (
                       <div className="carD" key={index}>
                         <div className="ProductImg">
@@ -64,10 +64,12 @@ function Food() {
                                 <p>Add to bag</p>
                               )}
                             </div>
- 
+
                             <div className="Ditels">Details &gt;</div>
                           </div>
-                          <img src={value.Image} />
+                          <img
+                            src={`http://localhost:3300/uploads/${value.Image}`}
+                          />
                           <p>{value.text}</p>
                           <p>{value.quantity}</p>
                           <p className="price">
@@ -120,7 +122,7 @@ function Food() {
                         </div>
                       </div>
                     );
-                 }
+                  }
                 })}
                 {/* _____________________________________________ */}
               </div>
