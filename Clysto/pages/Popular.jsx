@@ -1,19 +1,29 @@
-
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Bag from "../components/Bag";
 import Bottom_bag from "../components/HoroiganralBag";
 import SmallBag from "../components/Small-bag";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
-import { UpdateProduct } from "../Fetuare/Product";
+import { FromAPI, UpdateProduct } from "../Fetuare/Product";
 import { useDispatch, useSelector } from "react-redux";
+import { useFetchPopluerProductsQuery } from "../lib/ApiSlice";
+import { useEffect } from "react";
 
 function Popular() {
   const { ProductData } = useSelector((state) => state.product);
+  const { popular } = useSelector((state) => state.apiCon);
   const dispatch = useDispatch();
-   const AddToBag = (I, counter) => {
-     if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
-   };
+  const { data: PopularData, isSuccess } = useFetchPopluerProductsQuery();
+
+  useEffect(() => {
+    if (isSuccess && popular) {
+      dispatch(FromAPI([...PopularData]));
+    }
+  }, [dispatch, popular, isSuccess, PopularData]);
+
+  const AddToBag = (I, counter) => {
+    if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
+  };
   return (
     <>
       <Header />
@@ -29,10 +39,8 @@ function Popular() {
             <div className="connection">
               <p className="bar">Popular</p>
               <div className="ItemSection">
-            
                 {ProductData.map((value, index) => {
-                  if (value.Catagori == 'popular') {
-                   
+                  if (value.Catagori == "popular") {
                     return (
                       <div className="carD" key={index}>
                         <div className="ProductImg">
@@ -123,7 +131,7 @@ function Popular() {
                         </div>
                       </div>
                     );
-                 }
+                  }
                 })}
                 {/* _____________________________________________ */}
               </div>
@@ -136,4 +144,4 @@ function Popular() {
   );
 }
 
-export default Popular
+export default Popular;

@@ -22,16 +22,16 @@ exports.PostProduct = (req, res) => {
   }
 };
 
-exports.SummerConnction = (req, res) => {
-  try {
 
-    const sql = `SELECT * FROM product WHERE catagori='summer'`;
-    db.query(sql, (err,result) => {
+
+exports.APIcontroler = (req, res,pageName) => {
+  try {
+    let sql = `SELECT * FROM product WHERE catagori='${pageName}'`;
+    db.query(sql, (err, result) => {
       if (err) throw err;
-      res.status(200).json(result);
+      if (result) res.status(200).json(result);
     })
   } catch (error) {
-    res.status(500).json(error)
+    res.status(500).json(error);
   }
 }
-

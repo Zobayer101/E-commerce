@@ -104,7 +104,7 @@ const ProductSlice = createSlice({
     initialState,
     reducers: {
         FromAPI: (state, action) => {
-            state.ProductData.push(...action.payload);
+            state.ProductData=[...state.ProductData,...action.payload];
         },
         UpdateProduct: (state, action) => {
             const { id,counter } = action.payload;
@@ -115,9 +115,12 @@ const ProductSlice = createSlice({
       },
       NewApiADD: (state, action) => {
         state.ProductData.concat(action.payload);
-        }
+      },
+      clearData: (state) => {
+        state.ProductData=[]
+      }
 
     }
 })
 export default ProductSlice.reducer;
-export const { FromAPI, UpdateProduct, NewApiADD } = ProductSlice.actions;
+export const { FromAPI, UpdateProduct, NewApiADD ,clearData} = ProductSlice.actions;

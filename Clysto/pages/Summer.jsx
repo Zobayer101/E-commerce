@@ -6,31 +6,41 @@ import Bottom_bag from "../components/HoroiganralBag";
 import SmallBag from "../components/Small-bag";
 import { useDispatch, useSelector } from "react-redux";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
-import { UpdateProduct, FromAPI } from "../Fetuare/Product";
-
+import { UpdateProduct, FromAPI} from "../Fetuare/Product";
+import { useFetchSummerProductsQuery } from "../lib/ApiSlice";
 import { useEffect } from "react";
+import { SummerControll } from "../Fetuare/ApiController";
+
 
 const Summer = () => {
   const { ProductData } = useSelector((state) => state.product);
+  const { summer } = useSelector((state) => state.apiCon);
   const dispatch = useDispatch();
+  const { data: fetchSummerProducts, isSuccess: summerSuccess } =
+    useFetchSummerProductsQuery();
   useEffect(() => {
-      (async () => {
-        
-         let url= "http://localhost:3300/route/api/product/summer"
-        
-        const responce = await fetch(url, { method: "GET" });
-        let Data = await responce.json();
-        if (ProductData < 1) {
-          
-          dispatch(FromAPI(Data));
-        }
-      })();
-   },[dispatch,ProductData])
+    // (async () => {
+
+    //    let url= "http://localhost:3300/route/api/product/summer"
+
+    //   const responce = await fetch(url, { method: "GET" });
+    //   let Data = await responce.json();
+    //   if (ProductData < 1) {
+    //     dispatch(clearData());
+    //     dispatch(FromAPI(Data));
+    //   }
+    // })();
+    if (summerSuccess && summer) {
+      console.log(fetchSummerProducts);
+      dispatch(FromAPI([...fetchSummerProducts]));
+      dispatch(SummerControll(false));
+    }
+  }, [dispatch, fetchSummerProducts, summerSuccess,summer]);
   const AddToBag = (I, counter) => {
     if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
   };
  
-  //FromAPI(Data)
+  console.log(summer);
   console.log(ProductData)
   return (
     <>

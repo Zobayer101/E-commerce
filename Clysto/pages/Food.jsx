@@ -6,11 +6,20 @@ import Bottom_bag from "../components/HoroiganralBag";
 import SmallBag from "../components/Small-bag";
 import { useDispatch, useSelector } from "react-redux";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
-import { UpdateProduct } from "../Fetuare/Product";
+import { FromAPI, UpdateProduct } from "../Fetuare/Product";
+import { useFetchFoodProductsQuery } from "../lib/ApiSlice";
+import { useEffect } from "react";
 function Food() {
     const { ProductData } = useSelector((state) => state.product);
-    const dispatch = useDispatch();
-  
+    const { food } = useSelector((state) => state.apiCon);
+  const dispatch = useDispatch();
+  const {data:FoodDAta,isSuccess:Success}=useFetchFoodProductsQuery()
+  useEffect(() => {
+    if (Success && food) {
+      dispatch(FromAPI([...FoodDAta]))
+    }
+  }, [dispatch, Success, FoodDAta,food]);
+
     const AddToBag = (I, counter) => {
       if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
     };

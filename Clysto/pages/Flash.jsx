@@ -5,12 +5,24 @@ import Bag from "../components/Bag";
 import Bottom_bag from "../components/HoroiganralBag";
 import SmallBag from "../components/Small-bag";
 import { useDispatch, useSelector } from "react-redux";
-import { UpdateProduct } from "../Fetuare/Product";
+import { FromAPI, UpdateProduct } from "../Fetuare/Product";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
+import { useFetchFlashProductsQuery } from "../lib/ApiSlice";
+import { useEffect } from "react";
+import { FlashControll } from "../Fetuare/ApiController";
 
 function Flash() {
   const { ProductData } = useSelector((state) => state.product);
+  const { flash } = useSelector((state) => state.apiCon);
   const dispatch = useDispatch();
+  const { data: flashProduct, isSuccess: flashSuccess } = useFetchFlashProductsQuery();
+  useEffect(() => {
+   
+    if (flashSuccess && flash) {
+      dispatch(FromAPI([...flashProduct]));
+      dispatch(FlashControll(false))
+    }
+  }, [dispatch, flashProduct, flashSuccess,flash]);
   const AddToBag = (I, counter) => {
     if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
   };
