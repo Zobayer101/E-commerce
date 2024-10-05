@@ -9,6 +9,8 @@ import { AiTwotoneThunderbolt } from "react-icons/ai";
 import { FromAPI, UpdateProduct } from "../Fetuare/Product";
 import { useFetchFoodProductsQuery } from "../lib/ApiSlice";
 import { useEffect } from "react";
+import { FoodControll } from "../Fetuare/ApiController";
+
 function Food() {
     const { ProductData } = useSelector((state) => state.product);
     const { food } = useSelector((state) => state.apiCon);
@@ -17,6 +19,7 @@ function Food() {
   useEffect(() => {
     if (Success && food) {
       dispatch(FromAPI([...FoodDAta]))
+      dispatch(FoodControll(false));
     }
   }, [dispatch, Success, FoodDAta,food]);
 

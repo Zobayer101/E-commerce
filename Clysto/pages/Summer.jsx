@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Bag from "../components/Bag";
 import Bottom_bag from "../components/HoroiganralBag";
-// import Card from "../components/Card";
 import SmallBag from "../components/Small-bag";
 import { useDispatch, useSelector } from "react-redux";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
@@ -40,8 +39,7 @@ const Summer = () => {
     if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
   };
  
-  console.log(summer);
-  console.log(ProductData)
+ 
   return (
     <>
       <Header />

@@ -5,12 +5,23 @@ import Bag from "../components/Bag";
 import Bottom_bag from "../components/HoroiganralBag";
 import SmallBag from "../components/Small-bag";
 import { useDispatch, useSelector } from "react-redux";
-import { UpdateProduct } from "../Fetuare/Product";
+import { FromAPI, UpdateProduct } from "../Fetuare/Product";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
+import { useFetchCleaningProductsQuery } from "../lib/ApiSlice";
+import { useEffect } from "react";
+import { CleaningControll } from "../Fetuare/ApiController";
 
 function Cleaning() {
-    const { ProductData } = useSelector((state) => state.product);
-    const dispatch = useDispatch();
+  const { ProductData } = useSelector((state) => state.product);
+  const { cleaning } = useSelector((state) => state.apiCon);
+  const { data, isSuccess } = useFetchCleaningProductsQuery();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (isSuccess && cleaning) {
+      dispatch(FromAPI([...data]));
+      dispatch(CleaningControll(false));
+    }
+   }, [isSuccess,data,dispatch,cleaning]);
 
     const AddToBag = (I, counter) => {
       if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
@@ -65,10 +76,12 @@ function Cleaning() {
                                 <p>Add to bag</p>
                               )}
                             </div>
-   
+
                             <div className="Ditels">Details &gt;</div>
                           </div>
-                          <img src={value.Image} />
+                          <img
+                            src={`http://localhost:3300/uploads/${value.Image}`}
+                          />
                           <p>{value.text}</p>
                           <p>{value.quantity}</p>
                           <p className="price">

@@ -6,11 +6,22 @@ import Bottom_bag from "../components/HoroiganralBag";
 import SmallBag from "../components/Small-bag";
 import { useDispatch, useSelector } from "react-redux";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
-import { UpdateProduct } from "../Fetuare/Product";
+import { FromAPI, UpdateProduct } from "../Fetuare/Product";
+import { useFetchStationeryProductsQuery } from "../lib/ApiSlice";
+import { useEffect } from "react";
+import { StationeryControll } from "../Fetuare/ApiController";
 function Stationery() {
-    const { ProductData } = useSelector((state) => state.product);
+  const { ProductData } = useSelector((state) => state.product);
+  const { stationery } = useSelector((state) => state.apiCon);
+  const { data,isSuccess} = useFetchStationeryProductsQuery();
     const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (isSuccess && stationery) {
+      dispatch(FromAPI([...data]));
+      dispatch(StationeryControll(false));
+    }
+  }, [isSuccess, dispatch, data, stationery]);
     const AddToBag = (I, counter) => {
       if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
     };

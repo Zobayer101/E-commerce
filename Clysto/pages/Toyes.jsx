@@ -6,12 +6,22 @@ import Bottom_bag from "../components/HoroiganralBag";
 import SmallBag from "../components/Small-bag";
 import { useDispatch, useSelector } from "react-redux";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
-import { UpdateProduct } from "../Fetuare/Product";
+import { FromAPI, UpdateProduct } from "../Fetuare/Product";
+import { useFetchToysProductsQuery } from "../lib/ApiSlice";
+import { useEffect } from "react";
+import { ToyesControll } from "../Fetuare/ApiController";
 
 function Toyes() {
-    const { ProductData } = useSelector((state) => state.product);
+  const { ProductData } = useSelector((state) => state.product);
+  const { toyes } = useSelector((state) => state.apiCon);
+  const { data,isSuccess} = useFetchToysProductsQuery();
     const dispatch = useDispatch();
-
+  useEffect(() => {
+    if (isSuccess && toyes) {
+      dispatch(FromAPI([...data]));
+      dispatch(ToyesControll(false));
+    }
+  }, [dispatch, data, isSuccess, toyes]);
     const AddToBag = (I, counter) => {
       if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
     };

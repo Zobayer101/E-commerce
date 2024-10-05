@@ -5,11 +5,22 @@ import Bag from "../components/Bag";
 import Bottom_bag from "../components/HoroiganralBag";
 import { useDispatch, useSelector } from "react-redux";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
-import { UpdateProduct } from "../Fetuare/Product";
+import { FromAPI, UpdateProduct } from "../Fetuare/Product";
 import SmallBag from "../components/Small-bag";
+import { useFetchFashionProductsQuery } from "../lib/ApiSlice";
+import { useEffect } from "react";
+import { FashionControll } from "../Fetuare/ApiController";
 function Fashion() {
-     const { ProductData } = useSelector((state) => state.product);
-     const dispatch = useDispatch();
+  const { ProductData } = useSelector((state) => state.product);
+  const { fashion } = useSelector((state) => state.apiCon);
+  const { data,isSuccess } = useFetchFashionProductsQuery();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (isSuccess && fashion) {
+      dispatch(FromAPI([...data]));
+      dispatch(FashionControll(false));
+    }
+  }, [dispatch, data, isSuccess, fashion]);
 
      const AddToBag = (I, counter) => {
        if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));

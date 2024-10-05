@@ -33,6 +33,7 @@ const Dashbord = () => {
         quantity: "",
         image: "",
       });
+      setImg("");
     } else {
       alert('uplod faild !');
     }

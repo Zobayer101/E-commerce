@@ -5,11 +5,23 @@ import Bag from "../components/Bag";
 import Bottom_bag from "../components/HoroiganralBag";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { UpdateProduct } from "../Fetuare/Product";
+import { FromAPI, UpdateProduct } from "../Fetuare/Product";
 import SmallBag from "../components/Small-bag";
+import { useFetchKitchenProductsQuery } from "../lib/ApiSlice";
+import { useEffect } from "react";
+import { KitchenControll } from "../Fetuare/ApiController";
 function Kitchen() {
-   const { ProductData } = useSelector((state) => state.product);
-   const dispatch = useDispatch();
+  const { ProductData } = useSelector((state) => state.product);
+  const { kitchen } = useSelector((state) => state.apiCon);
+  const {data, isSuccess } = useFetchKitchenProductsQuery();
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    if (isSuccess && kitchen) {
+      dispatch(FromAPI([...data]));
+      dispatch(KitchenControll(false))
+    }
+  }, [data, isSuccess, dispatch, kitchen]);
 
    const AddToBag = (I, counter) => {
      if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));

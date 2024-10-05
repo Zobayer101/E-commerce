@@ -5,13 +5,23 @@ import Bag from "../components/Bag";
 import Bottom_bag from "../components/HoroiganralBag";
 import { useDispatch, useSelector } from "react-redux";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
-import { UpdateProduct } from "../Fetuare/Product";
+import { FromAPI, UpdateProduct } from "../Fetuare/Product";
 import SmallBag from "../components/Small-bag";
+import { useFetchBeautyProductsQuery } from "../lib/ApiSlice";
+import { useEffect } from "react";
+import { BeautyControll } from "../Fetuare/ApiController";
 
 function Beauty() {
-    const { ProductData } = useSelector((state) => state.product);
+  const { ProductData } = useSelector((state) => state.product);
+  const { beauty } = useSelector((state) => state.apiCon);
+  const {data,isSuccess } = useFetchBeautyProductsQuery();
     const dispatch = useDispatch();
-
+  useEffect(() => { 
+    if (isSuccess && beauty) {
+      dispatch(FromAPI([...data]));
+      dispatch(BeautyControll(false));
+    }
+  }, [dispatch,isSuccess,data,beauty]);
     const AddToBag = (I, counter) => {
       if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
     };

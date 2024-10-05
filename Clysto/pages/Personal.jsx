@@ -6,10 +6,22 @@ import Bottom_bag from "../components/HoroiganralBag";
 import SmallBag from "../components/Small-bag";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { UpdateProduct } from "../Fetuare/Product";
+import { FromAPI, UpdateProduct } from "../Fetuare/Product";
+import { useEffect } from "react";
+import { useFetchPersonalProductsQuery } from "../lib/ApiSlice";
+import { PersonalControll } from "../Fetuare/ApiController";
 function Personal() {
-    const { ProductData } = useSelector((state) => state.product);
+  const { ProductData } = useSelector((state) => state.product);
+  const { personal } = useSelector((state) => state.apiCon);
+  const { data,isSuccess} = useFetchPersonalProductsQuery();
     const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isSuccess && personal) {
+      dispatch(FromAPI([...data]));
+      dispatch(PersonalControll(false));
+    }
+  }, [dispatch, isSuccess, data, personal]);
 
     const AddToBag = (I, counter) => {
       if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
