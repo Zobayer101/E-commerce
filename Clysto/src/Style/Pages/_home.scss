@@ -161,7 +161,6 @@
       width: 380px;
       height: 400px;
       margin: 10px ;
-      
       border-radius: 8px;
       //box-shadow: inset 0 0 10px .5px rgba(32, 32, 32, 0.747);
       background: #e9e9e9;
@@ -178,6 +177,107 @@
       img{
         width: 100%;
         border-radius: 0 0px 8px 8px;
+      }
+    }
+  }
+  .Dalivaring{
+    margin-top: 40px;
+    width: 100%;
+    height: 300px;
+    background-image: url("../../../src/img/city-background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .theText{
+      font-weight: 600;
+      font-size: 20px;
+
+    }
+    .ThereBTn{
+      max-width: 500px;
+      height: 100px;
+      //background: #7a7a7a;
+      display: flex;
+      align-items: center;
+      button{
+        padding: 10px 26px ;
+        margin: 0 10px ;
+        border-radius: 22px;
+        background: #dfb93d;
+        
+        color: #fff;
+        font-size: 16px;
+        border: none;
+      }
+    }
+  }
+  .Footer{
+    width: 100%;
+    height: 400px;
+    background: #ebe9e9;
+    
+    .fotHead{
+      width: 100%;
+      margin-top: 20px;
+     display: flex;
+      border: 1px solid rgb(87, 87, 87);
+      height:40px;
+      align-items: center;
+      p{
+        padding: 5px 20px;
+        font-weight: 600;
+        margin-left: 50px;
+      }
+      li{
+        text-decoration:underline;
+        list-style: none;
+        padding: 3px 10px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+    .sectioncard{
+      width: 100%;
+   
+      display: flex;
+    }
+    .footerCard{
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      margin: 0 10px;
+      flex-grow: 1;
+      width: 200px;
+      height: 260px;
+      //background: #a39f9f;
+      p{
+        font-weight: 500;
+        margin-top: 10px;
+      }
+      li{
+        list-style: none;
+        font-size: 14px;
+        margin-top: 8px;
+      }
+    }
+    .PayMent{
+      width: 100%;
+      height: 50px;
+      border: 1px solid gray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p{
+        font-weight: 500;
+      }
+      img{
+        width: 40px;
+        margin-left: 30px;
       }
     }
   }

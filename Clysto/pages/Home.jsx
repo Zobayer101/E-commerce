@@ -218,6 +218,49 @@ const Home = () => {
                 <img src="../src/img/premiumImage.jpg" />
               </div>
             </div>
+            <div className="Dalivaring">
+              <div className="theText">Currently delivering in</div>
+
+              <div className="ThereBTn">
+                <button>Dhaka </button>
+                <button> Chattogram</button>
+                <button>Jashore</button>
+              </div>
+            </div>
+            <div className="Footer">
+              <div className="fotHead">
+                <p>Cities:</p>
+                <li>Dhaka</li>
+                <li>Chattogram</li>
+                <li>Jashore</li>
+              </div>
+              <div className="sectioncard">
+
+                <div className="footerCard">
+                  <p>About Clysto</p>
+                  <li>Our Story</li>
+                  <li>Team</li>
+                  <li>Privacy Policy</li>
+                  <li>Terms of Use</li>
+              </div>
+                <div className="footerCard">
+                  <p>Customer Service</p>
+                  <li>Contact Us</li>
+                  <li>FAQ</li>
+              </div>
+                <div className="footerCard">
+                  <p>For business</p>
+                  <li>Corporate</li>
+                </div>
+              </div>
+                <div className="PayMent">
+                <p>Payment Methods</p>
+                <img src="../src/Icon/web/Amex.png"  />
+                <img src="../src/Icon/web/mastercard.png"  />
+                <img src="../src/Icon/web/VIsa.png"  />
+                <img src="../src/Icon/web/bkash.png"  />
+                </div>
+            </div>
           </div>
         </div>
         <Bottom_bag />

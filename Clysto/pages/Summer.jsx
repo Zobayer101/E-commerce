@@ -30,7 +30,7 @@ const Summer = () => {
     //   }
     // })();
     if (summerSuccess && summer) {
-      console.log(fetchSummerProducts);
+      //console.log(fetchSummerProducts);
       dispatch(FromAPI([...fetchSummerProducts]));
       dispatch(SummerControll(false));
     }

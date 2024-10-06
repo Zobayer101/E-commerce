@@ -1,7 +1,8 @@
+import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = React.memo(() => {
   const { bar } = useSelector((state) => state.Bar);
 
   return (
@@ -139,5 +140,6 @@ const Sidebar = () => {
       <hr />
     </div>
   );
-};
+});
+Sidebar.displayName="Sidebar"
 export default Sidebar;
