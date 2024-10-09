@@ -15,16 +15,19 @@ function Beauty() {
   const { ProductData } = useSelector((state) => state.product);
   const { beauty } = useSelector((state) => state.apiCon);
   const {data,isSuccess } = useFetchBeautyProductsQuery();
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  
   useEffect(() => { 
     if (isSuccess && beauty) {
       dispatch(FromAPI([...data]));
       dispatch(BeautyControll(false));
     }
-  }, [dispatch,isSuccess,data,beauty]);
+  }, [dispatch, isSuccess, data, beauty]);
+  
     const AddToBag = (I, counter) => {
       if (counter >= 0) dispatch(UpdateProduct({ id: I, counter }));
-    };
+  };
+
   return (
     <>
       <Header />
@@ -75,10 +78,12 @@ function Beauty() {
                                 <p>Add to bag</p>
                               )}
                             </div>
-  
+
                             <div className="Ditels">Details &gt;</div>
                           </div>
-                          <img src={value.Image} />
+                          <img
+                            src={`http://localhost:3300/uploads/${value.Image}`}
+                          />
                           <p>{value.text}</p>
                           <p>{value.quantity}</p>
                           <p className="price">
